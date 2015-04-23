@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ simula\ el\ display\ segun\ los\ puntos\ de\ la\ targeta\r\n
+comment1.params=
+comment1.target=Puntos()
+comment2.params=prefix
+comment2.target=Puntos(java.lang.String)
+comment2.text=\r\n\ crea\ un\ nuevo\ contador\ para\ los\ puntos,\ inicializandolos\ en\ 0\r\n
+comment3.params=punt
+comment3.target=void\ add(int)
+comment3.text=\r\n\ Se\ a\u00F1aden\ las\ nuevas\ puntuaciones\ segun\ el\ contador\ \r\n
+comment4.params=
+comment4.target=int\ getValue()
+comment4.text=\r\n\ regresa\ el\ conteo\ actual\ \r\n
+comment5.params=newEval
+comment5.target=void\ setValue(int)
+comment5.text=\r\n\ \r\n
+comment6.params=prefix
+comment6.target=void\ setPrefix(java.lang.String)
+comment6.text=\r\n\ \r\n
+comment7.params=
+comment7.target=void\ updateImage()
+comment7.text=\r\n\ \r\n
+numComments=8
