@@ -15,5 +15,10 @@ public class clase1 extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    } 
+   
+    public void prueva1()
+    {
+        //metodo para la prueba
+    }
 }
