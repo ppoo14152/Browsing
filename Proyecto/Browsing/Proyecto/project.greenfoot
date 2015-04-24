@@ -1,11 +1,15 @@
 #Greenfoot properties
+<<<<<<< .mine
+#Fri Apr 24 11:42:26 CDT 2015
+=======
 #Fri Apr 24 17:43:02 CDT 2015
+>>>>>>> .r11
 target12.editor.height=700
 target10.editor.width=900
 target2.width=100
-target8.name=MainMenu
-target11.y=250
-target11.x=190
+target8.name=Etiqueta
+target11.y=130
+target11.x=100
 target5.naviview.expanded=true
 target15.editor.height=700
 dependency12.type=UsesDependency
@@ -19,10 +23,15 @@ target2.editor.x=40
 dependency9.to=Menu
 target1.height=50
 class.Movimientos.superclass=greenfoot.Actor
-target13.name=Menu
+target13.name=EnemCriatura
+target8.y=10
 target8.y=310
 dependency16.type=UsesDependency
+<<<<<<< .mine
+target8.x=70
+=======
 target8.x=10
+>>>>>>> .r11
 class.MainMenu.image=mainmenu.png
 target2.editor.width=900
 dependency2.type=UsesDependency
@@ -73,11 +82,11 @@ target5.name=Puntos
 world.lastInstantiated=Menu
 mainWindow.width=1318
 target10.editor.y=20
-target9.name=Botones
+target9.name=MainMenu
 target10.editor.x=40
 target5.height=50
 target8.naviview.expanded=true
-target10.name=Fuego
+target10.name=Botones
 dependency13.type=UsesDependency
 target14.naviview.expanded=true
 target7.editor.width=900
@@ -85,7 +94,7 @@ target2.type=ClassTarget
 target15.typeParameters=
 target13.editor.height=700
 target4.editor.y=73
-target14.name=Creditos
+target14.name=Menu
 dependency1.to=EnemCriatura
 target4.editor.x=235
 dependency17.type=UsesDependency
@@ -127,13 +136,51 @@ target7.typeParameters=
 target2.name=Movimientos
 dependency9.from=Start
 target14.width=80
+<<<<<<< .mine
+target14.y=190
+=======
 target14.y=250
+>>>>>>> .r11
 target13.typeParameters=
 class.Menu.image=portada.png
+<<<<<<< .mine
+target15.width=80
+target14.x=10
+=======
 target15.width=80
 target14.x=100
 target6.naviview.expanded=true
 target6.name=Escenario1
+>>>>>>> .r11
+<<<<<<< .mine
+target6.name=Escenario1
+target9.height=50
+target6.editor.y=32
+target11.editor.width=900
+target6.editor.x=453
+target12.y=250
+target5.editor.height=700
+target12.x=190
+dependency10.type=UsesDependency
+target11.showInterface=false
+target10.y=190
+target8.editor.height=700
+target10.x=200
+class.Credit.superclass=greenfoot.World
+dependency2.to=Fuego
+class.Start.image=Startbig.png
+target14.showInterface=false
+target12.width=80
+target11.name=Fuego
+dependency14.type=UsesDependency
+target13.editor.y=20
+target12.height=50
+target13.editor.x=40
+target13.width=100
+target10.naviview.expanded=true
+target9.y=310
+target9.x=10
+=======
 target9.height=50
 target6.editor.y=32
 target11.editor.width=900
@@ -160,16 +207,26 @@ target13.width=80
 target10.naviview.expanded=true
 target9.y=190
 target9.x=200
+>>>>>>> .r11
 target6.height=50
 target3.type=ClassTarget
 class.Puntos.superclass=greenfoot.Actor
 target3.editor.width=900
 dependency12.to=Menu
 class.Creditos.superclass=Botones
+<<<<<<< .mine
+target7.y=310
+target7.x=100
+=======
 target7.y=10
 target7.x=70
+>>>>>>> .r11
 target2.editor.height=700
+<<<<<<< .mine
+target15.name=Creditos
+=======
 target15.name=Clase2
+>>>>>>> .r11
 dependency18.type=UsesDependency
 class.Creditos.image=Credit.png
 target11.typeParameters=
@@ -182,17 +239,21 @@ target7.editor.x=40
 target10.width=80
 target3.y=10
 target3.x=160
+class.clase1.superclass=greenfoot.Actor
 target11.width=80
 dependency7.to=Puntos
 dependency12.from=Creditos
 target3.height=50
+<<<<<<< .mine
+=======
 class.Clase2.superclass=greenfoot.Actor
+>>>>>>> .r11
 dependency8.type=UsesDependency
 target1.y=130
 target4.naviview.expanded=true
 target1.x=10
-target14.editor.y=20
-target14.editor.x=40
+target14.editor.y=12
+target14.editor.x=-7
 target12.type=ClassTarget
 target5.typeParameters=
 class.Escenario1.superclass=greenfoot.World
@@ -200,6 +261,7 @@ dependency17.to=EnemCriatura
 dependency16.from=Menu
 target1.editor.width=900
 dependency2.from=Disparo
+target15.naviview.expanded=true
 target8.editor.y=20
 target8.editor.x=40
 target11.editor.height=700
@@ -217,7 +279,7 @@ target6.showInterface=false
 target3.typeParameters=
 target9.showInterface=false
 dependency3.to=Disparo
-target7.name=Etiqueta
+target7.name=clase1
 target9.naviview.expanded=true
 target2.naviview.expanded=true
 dependency11.type=UsesDependency
@@ -230,7 +292,7 @@ class.EnemCriatura.superclass=Movimientos
 dependency13.to=Credit
 package.numTargets=15
 target6.editor.width=900
-target12.name=EnemCriatura
+target12.name=Credit
 dependency15.type=UsesDependency
 target13.naviview.expanded=true
 dependency1.type=UsesDependency
@@ -274,12 +336,16 @@ target1.editor.x=358
 target5.width=80
 dependency4.to=Fuego
 target4.editor.width=900
+<<<<<<< .mine
+target15.y=250
+=======
 target15.y=310
+>>>>>>> .r11
 target4.name=Start
 target15.x=100
 target4.height=50
 target12.typeParameters=
-target13.y=190
+target13.y=70
 target1.width=80
-target13.x=10
+target13.x=70
 dependency14.to=MainMenu
