@@ -22,16 +22,26 @@ public class EnemCriatura extends Movimientos
         if(isAtEdge()) {
         //turn(0);
         //move(0.5);
-            int i=Greenfoot.getRandomNumber(4);
+            int i=Greenfoot.getRandomNumber(1);
             this.setImage((i+1)+".gif");
         
-            setLocation(getX(), Greenfoot.getRandomNumber(600));
+            setLocation(getX(), Greenfoot.getRandomNumber(400));
             turn(180);
                
             q++;
         if (q%2==1){
                 this.getImage().mirrorVertically();
             }
+        }
+        
+        DisparoCria dc = new DisparoCria();
+        
+        getWorld().addObjects(dc, getX(),getY());
+        dc.turn(getRotation());
+        
+        if (isTouching(Barco1user.class)){
+            Fuego fuego = new Fuego();
+            getWorld().addObject(fuego,getX(),getY)
         }
     }
     }    

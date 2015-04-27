@@ -1,17 +1,19 @@
 import greenfoot.*;
 
+
 /**
- * Write a description of class Disparo here.
+ * Write a description of class DisparoEnf here.
  * 
  * @author zarazua lopez vicente
- * @author Efraín Jacobo Tovar 
- * @version 19 de abril del 2015
- * @version 22 de abril del 2015
- */  
-public class Disparo extends Movimientos
+ * @author jacobo tovar efrain
+ * @version 25 de abril del 2015
+ * 
+ * clase para hacer el disparo de la criatura tipo extraterrestre
+ */
+public class DisparoCria extends Movimientos
 {
     /**
-     * Act - do whatever the Disparo wants to do. This method is called whenever
+     * Act - do whatever the DisparoCria wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -20,19 +22,20 @@ public class Disparo extends Movimientos
         move(5);
         if(isAtEdge())
             getWorld().removeObject(this);
-        else if(isTouching(EnemCriatura.class))
+        else if(isTouching(Barco1user.class))
         {
-           removeTouching(EnemCriatura.class);
+           removeTouching(Barco1user.class);
            Fuego fuego = new Fuego();
            getWorld().addObject(fuego, getX(), getY()); 
-           
+    
            ((Escenario1)getWorld()).tambahSkor();
-           
+        
            Greenfoot.playSound("blast.wav");
-
+               
            getWorld().removeObject(this);
            
-        }
-    }   
     
+}
+
+}
 }
