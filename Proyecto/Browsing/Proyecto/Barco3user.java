@@ -1,20 +1,25 @@
 import greenfoot.*;
+
 /**
- * Write a description of class barco1 here.
+ * Write a description of class Barco3user here.
  * 
  * @author zarazua lopez vicente
- * @author Efraín Jacobo Tovar
- * @version 15 de abril del 2015
- * @version 22 de abril del 2015 //agregar sonido de disparo
+ * @author jacobo tovar efrain
+ * @version 28 de abril del 2015
+ * 
+ * clase para el barco del usuario en el nivel 3
  */
-public class Barco1user extends Movimientos
+public class Barco3user extends Movimientos
 {
     /**
-     * Act - do whatever the barco1 wants to do. This method is called whenever
+     * Act - do whatever the Barco3user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
+        // Add your action code here.
+        
+        
         //mueve a el barco para la derecha
         if(Greenfoot.isKeyDown("right")){
             move(3);
@@ -40,14 +45,6 @@ public class Barco1user extends Movimientos
            dis.turn(getRotation());
            
            Greenfoot.playSound("kri-fire.wav");
-        }
-        
-        if(isTouching(EnemCriatura.class))
-        {
-            //((Escenario1)getWorld()).gameOver();
-            Fuego fuego = new Fuego();
-            getWorld().addObject(fuego, getX(), getY());
-            getWorld().removeObject(this);
         }
     }    
 }

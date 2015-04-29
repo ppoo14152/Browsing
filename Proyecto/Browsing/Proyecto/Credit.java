@@ -3,8 +3,12 @@ import greenfoot.*;
 /**
  * Write a description of class Credit here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author Efraín Jacobo Tovar 
+ * @version 17 de abril del 2015
+ * @version ultima modificacion 21 de abril del 2015
+ * 
+ * clase para mostrar los creditos del juego
  */
 public class Credit extends World
 {

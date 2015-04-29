@@ -29,7 +29,7 @@ public class Escenario1 extends World
      */
     public Escenario1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1000x600 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
        
         prepare();
@@ -58,12 +58,13 @@ public class Escenario1 extends World
         addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
         ene.turn(Greenfoot.getRandomNumber(100));
     }
+    
     private void prepare()
     {
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
-      addObject(enecri,100,200);
-      for(int i = 0 ; i<2; i++)
+      addObject(enecri,100,500);
+      for(int i = 0 ; i<0; i++)
       {
           createEnemCriatura();
         }
@@ -74,6 +75,6 @@ public class Escenario1 extends World
     
      public void tambahSkor()
     {
-        punto.add(50);
+        punto.add(25);
     }
 }

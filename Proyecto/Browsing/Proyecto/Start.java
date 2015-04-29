@@ -3,8 +3,11 @@ import greenfoot.*;
 /**
  * Write a description of class Start here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author jacobo tovar efrain 
+ * @version 23 de abril del 2015
+ * 
+ * clase para poer regresar a el menu principal 
  */
 public class Start extends Botones
 {
@@ -25,7 +28,7 @@ public class Start extends Botones
             Greenfoot.playSound("splash.mp3");
             Greenfoot.delay(250);
 
-            Greenfoot.setWorld(new Escenario1());
+            Greenfoot.setWorld(new Dificultades());
         }
         
         {

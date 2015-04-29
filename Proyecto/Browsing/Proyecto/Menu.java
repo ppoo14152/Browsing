@@ -3,8 +3,12 @@ import java.awt.*;
 /**
  * Write a description of class Menu here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author jacobo tovar efrain
+ * @version 23 de abril del 2015
+ * @version fecha de modificacion 27 de abril del 2015
+ * 
+ * clase para ver la opcion de creditos y la de empezar
  */
 
 public class Menu extends World
