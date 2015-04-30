@@ -9,7 +9,8 @@ import greenfoot.*;
  */
 public class EnemCriatura extends Movimientos
 {
-    int q=0;
+    private int q=0;
+    private int c=0;
     /**
      * Act - do whatever the EnemCriatura wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,19 +23,42 @@ public class EnemCriatura extends Movimientos
         {  
          turn(180);
          getImage().mirrorVertically();   
-        }  
+        
+        } 
+        
+        disparar();
           
         }
-    }     
-        /**
-        DisparoCria dc = new DisparoCria();
-        
-        getWorld().addObjects(dc, getX(),getY());
-        dc.turn(getRotation());
-        
-        if (isTouching(Barco1user.class)){
-            Fuego fuego = new Fuego();
-            getWorld().addObject(fuego,getX(),getY());
+     
+    public void disparar()
+    {
+        mov();
+        q++;
+        if(q==1)
+        {
+         DisparoCria1 dc1 = new DisparoCria1 ();
+         getWorld().addObject(dc1,getX(),getY());
+         dc1.turn(getRotation());
         }
-    }*/
- 
+        if(q==4)
+        {
+            q=0;
+        }
+        
+          if(isTouching(Barco1user.class))
+        {
+            //((Escenario1)getWorld()).gameOver();
+            Fuego fuego = new Fuego();
+            getWorld().addObject(fuego, getX(), getY());
+            getWorld().removeObject(this);
+        }
+        }
+        
+        public void mov()
+        {
+            c= Greenfoot.getRandomNumber(5);
+            move(c);
+        }
+    }
+        
+      
