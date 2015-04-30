@@ -10,6 +10,8 @@ import greenfoot.*;
  */  
 public class Disparo extends Movimientos
 {
+    private int i=0; 
+    private int j=0;
     /**
      * Act - do whatever the Disparo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -33,6 +35,9 @@ public class Disparo extends Movimientos
            getWorld().removeObject(this);
            
         }
+        
+        
+        
     }   
     
 }

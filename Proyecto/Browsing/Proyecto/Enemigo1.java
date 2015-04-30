@@ -4,8 +4,10 @@ import greenfoot.*;
  * Write a description of class Enemigo1 here.
  * 
  * @author zarazua lopez vicente
- * @
- * @version (a version number or a date)
+ * @author jacobo tovar efrain
+ * @version 28 de abril del 2015
+ * 
+ * clase para el enemigo 1 que saldra para terminar el nivel 1
  */
 public class Enemigo1 extends Movimientos
 {

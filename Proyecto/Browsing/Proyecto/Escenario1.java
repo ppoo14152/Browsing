@@ -55,7 +55,7 @@ public class Escenario1 extends World
     public void createEnemCriatura()
     {
         EnemCriatura ene = new EnemCriatura();
-        addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
+        //addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
         ene.turn(Greenfoot.getRandomNumber(100));
     }
     
@@ -63,8 +63,11 @@ public class Escenario1 extends World
     {
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
-      addObject(enecri,100,500);
-      for(int i = 0 ; i<0; i++)
+      addObject(enecri,100,550);
+      
+      EnemCriatura enecri2 = new EnemCriatura();
+      addObject(enecri2,100,450);
+      for(int i = 0 ; i<3; i++)
       {
           createEnemCriatura();
         }

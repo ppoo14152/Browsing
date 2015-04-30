@@ -3,8 +3,11 @@ import greenfoot.*;
 /**
  * Write a description of class Enemigo3 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author jacobo tovar efrain
+ * @version 29 de abril del 2015
+ * 
+ * clase para el enemigo 3 que aparecera a el final del nivel dificil
  */
 public class Enemigo3 extends Movimientos
 {

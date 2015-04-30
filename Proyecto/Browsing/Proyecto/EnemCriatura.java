@@ -9,6 +9,7 @@ import greenfoot.*;
  */
 public class EnemCriatura extends Movimientos
 {
+    int q=0;
     /**
      * Act - do whatever the EnemCriatura wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,12 +18,10 @@ public class EnemCriatura extends Movimientos
     {
         // acciones que realizara el enemigo criatura como lo es el movimiento.
         move(0.5);
-        if(isAtEdge() || getX()>750) {
-       
-            turn(180);
-            getImage().mirrorVertically();
-
-           
+        if(isAtEdge() || getX()>750) 
+        {  
+         turn(180);
+         getImage().mirrorVertically();   
         }  
           
         }

@@ -5,7 +5,9 @@ import java.awt.Color;
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
- * @version 
+ * @version 21 de abril del 2015
+ * 
+ * clase para realizar el contador de puntos
  */
 public class Puntos extends Actor
 {

@@ -50,6 +50,7 @@ public class Menu extends World
     {
         addObject(new Start(), 700,400);
         addObject(new Creditos(), 700,500);
+        addObject(new NombreJuego(),500,50);
     }
 
 }

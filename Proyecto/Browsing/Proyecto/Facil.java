@@ -1,10 +1,10 @@
 import greenfoot.*;
-
 /**
  * Write a description of class Facil here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author jacobo tovar efrain
+ * @version 28 de abril del 2015
  */
 public class Facil extends Botones
 {

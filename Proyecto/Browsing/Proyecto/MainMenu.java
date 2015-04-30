@@ -3,8 +3,11 @@ import greenfoot.*;
 /**
  * Write a description of class MainMenu here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author jacobo tovar efrain
+ * @version 22 de abril del 2015
+ * 
+ * clase para el boton que hace que regresemos a el menu inicial
  */
 public class MainMenu extends Botones
 {
