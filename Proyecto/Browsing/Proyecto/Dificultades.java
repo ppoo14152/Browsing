@@ -21,6 +21,8 @@ public class Dificultades extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
+        MainMenu mainmenu = new MainMenu();
+        addObject(mainmenu, 502, 564);
         prepare();
     }
     /**
@@ -28,8 +30,9 @@ public class Dificultades extends World
      */
     private void prepare()
     {
-        addObject(new Facil(),525,300);
+        addObject(new Facil(),525,250);
         addObject(new Medio(),150,400);
         addObject(new Dificil(),850,400);
+        
     }
 }

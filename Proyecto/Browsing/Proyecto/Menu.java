@@ -48,9 +48,12 @@ public class Menu extends World
     
     private void prepare()
     {
-        addObject(new Start(), 700,400);
-        addObject(new Creditos(), 700,500);
+        addObject(new Start(), 650,300);
+        addObject(new Creditos(), 650,500);
+        addObject(new Ayuda(),500,400);
+        addObject(new Records(),800,400);
         addObject(new NombreJuego(),500,50);
+        
     }
 
 }
