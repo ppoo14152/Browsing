@@ -26,7 +26,6 @@ public class Ayuda extends Botones
             Greenfoot.playSound("splash.mp3");
             Greenfoot.delay(250);
 
-            //Greenfoot.setWorld(new Dificultades());
         }
         
         {
