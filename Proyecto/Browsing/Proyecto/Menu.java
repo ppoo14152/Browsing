@@ -30,7 +30,7 @@ public class Menu extends World
     }
     
     GreenfootSound bgMusic = new GreenfootSound("cheat.wav");
-        
+       
     public void play()
     {
         bgMusic.play();

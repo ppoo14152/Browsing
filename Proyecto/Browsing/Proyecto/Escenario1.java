@@ -11,9 +11,11 @@ import greenfoot.*;
 
 public class Escenario1 extends World
 {
-    int timeSpawn = 0;
+    private int timeSpawn = 0;
     Puntos punto = new Puntos("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+    public ImgScroll scroll;
+  
     public void act()
     {
         timeSpawn++;
@@ -29,9 +31,16 @@ public class Escenario1 extends World
      */
     public Escenario1()
     {    
-        // Create a new world with 1000x600 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1); 
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(1000, 600, 1,false); 
        
+       scroll = new ImgScroll(this,new GreenfootImage("ecenario1.png"),1700,1500);
+       /**for(int j=0; j<scroll.getScrollHeight()-100; j+=300)
+       {
+         for(int i=0; i<scroll.getScrollWidth()-200;i+=300)
+         {
+          }
+        }*/
         prepare();
         play();
         loop();
@@ -55,7 +64,7 @@ public class Escenario1 extends World
     public void createEnemCriatura()
     {
         EnemCriatura ene = new EnemCriatura();
-        //addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
+        addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
         ene.turn(Greenfoot.getRandomNumber(100));
     }
     
@@ -63,14 +72,11 @@ public class Escenario1 extends World
     {
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
-      addObject(enecri,100,550);
-      
-      EnemCriatura enecri2 = new EnemCriatura();
-      addObject(enecri2,100,450);
-      for(int i = 0 ; i<3; i++)
-      {
+      addObject(enecri,100,200);
+      //for(int i = 0 ; i<2; i++)
+      //{
           createEnemCriatura();
-        }
+        //}
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
       //bar.setLocation(293,366);
@@ -78,6 +84,6 @@ public class Escenario1 extends World
     
      public void tambahSkor()
     {
-        punto.add(25);
+        punto.add(50);
     }
 }

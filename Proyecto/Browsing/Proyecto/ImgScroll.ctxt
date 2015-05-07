@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=scrWorld\ scrIma
+comment0.target=ImgScroll(greenfoot.World,\ greenfoot.GreenfootImage)
+comment0.text=\r\n
+comment1.params=scrWorld\ repImage\ ancho\ alto
+comment1.target=ImgScroll(greenfoot.World,\ greenfoot.GreenfootImage,\ int,\ int)
+comment1.text=\r\n
+comment2.params=
+comment2.target=void\ scrollBackground()
+comment2.text=\ \r\n
+comment3.params=dx\ dy
+comment3.target=void\ scroll(int,\ int)
+comment3.text=\ \r\n\ \ \ \ \ \r\n
+comment4.params=
+comment4.target=int\ getScrolldX()
+comment4.text=\ \r\n
+comment5.params=
+comment5.target=int\ getScrolldY()
+comment5.text=\ \r\n
+comment6.params=
+comment6.target=int\ getScrollWidth()
+comment6.text=\ \r\n
+comment7.params=
+comment7.target=int\ getScrollHeight()
+comment7.text=
+numComments=8
