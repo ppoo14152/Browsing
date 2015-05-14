@@ -55,16 +55,16 @@ public class Barco3user extends Movimientos
         
     private void disparar()
     {
-        //if(("space").equals(Greenfoot.getKey()))
-        if (Greenfoot.isKeyDown("space")&& System.currentTimeMillis()>lastShot+300)
+        if(("space").equals(Greenfoot.getKey()))
+        //if (Greenfoot.isKeyDown("space"))//&& System.currentTimeMillis()>lastShot+300)
         {
            Disparo dis = new Disparo();
           
            getWorld().addObject(dis, getX(), getY());
            
-           //dis.turn(getRotation());
-           dis.setRotation(getRotation());
-           lastShot = System.currentTimeMillis();
+           dis.turn(getRotation());
+           //dis.setRotation(getRotation());
+           //lastShot = System.currentTimeMillis();
            Greenfoot.playSound("kri-fire.wav");
         }
     }    

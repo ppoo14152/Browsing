@@ -24,7 +24,7 @@ public class Creditos extends Botones
         {
             World myWorld = getWorld();
             Menu men = (Menu)myWorld;
-            men.stop();
+            //men.stop();
             Greenfoot.setWorld(new Credit());
         }
         

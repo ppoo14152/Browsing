@@ -19,7 +19,8 @@ public class EnemCriatura2 extends Movimientos
     {
         // Add your action code here.
         
-        move(0.5);
+        //move(0.5);
+        move(1);
         if(isAtEdge() || getX()>750) 
         {  
          turn(180);

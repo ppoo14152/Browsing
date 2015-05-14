@@ -9,13 +9,20 @@ import greenfoot.*;
  */
 public class Barco1user extends Movimientos
 {
+    private int q=0;
     /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        //mueve a el barco para la derecha
+        
+        Movimientos();
+        
+    }    
+    public void Movimientos()
+    {
+     //mueve a el barco para la derecha
         if(Greenfoot.isKeyDown("right")){
             move(3);
            }
@@ -30,15 +37,20 @@ public class Barco1user extends Movimientos
             //mover el barco del usuario a hacia abajo            
         else if(Greenfoot.isKeyDown("down"))
             turn(-1);
+           Disparar();
          
+    }
+    
+    public void Disparar()
+    {
         if(("space").equals(Greenfoot.getKey()))
-        {
+         {
            Disparo dis = new Disparo();
           
-           getWorld().addObject(dis, getX(), getY());
+           getWorld().addObject(dis, getX(), getY()+10);
            
            dis.turn(getRotation());
-           
+              
            Greenfoot.playSound("kri-fire.wav");
         }
         
@@ -49,5 +61,5 @@ public class Barco1user extends Movimientos
             getWorld().addObject(fuego, getX(), getY());
             getWorld().removeObject(this);
         }
-    }    
+    }
 }

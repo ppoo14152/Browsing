@@ -23,7 +23,7 @@ public class Start extends Botones
         {
             World myWorld = getWorld();
             Menu men = (Menu)myWorld;
-            men.stop();
+            //men.stop();
 
             Greenfoot.playSound("splash.mp3");
             Greenfoot.delay(250);

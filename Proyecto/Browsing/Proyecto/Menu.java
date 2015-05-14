@@ -24,13 +24,13 @@ public class Menu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
         prepare();
-        play();
-        loop();
+        //play();
+        //loop();
         
     }
     
-    GreenfootSound bgMusic = new GreenfootSound("cheat.wav");
-       
+    //GreenfootSound bgMusic = new GreenfootSound("cheat.wav");
+    /*   
     public void play()
     {
         bgMusic.play();
@@ -45,7 +45,7 @@ public class Menu extends World
     {
       bgMusic.stop();
     }
-    
+    */
     private void prepare()
     {
         addObject(new Start(), 650,300);

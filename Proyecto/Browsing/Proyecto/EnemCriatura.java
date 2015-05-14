@@ -18,7 +18,8 @@ public class EnemCriatura extends Movimientos
     public void act() 
     {
         // acciones que realizara el enemigo criatura como lo es el movimiento.
-        move(0.5);
+        //move(0.5);
+        move(1);
         if(isAtEdge() || getX()>750) 
         {  
          turn(180);

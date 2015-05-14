@@ -14,14 +14,20 @@ public class Escenario1 extends World
     private int timeSpawn = 0;
     Puntos punto = new Puntos("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
-    public ImgScroll scroll;
-  
+    //public ImgScroll scroll;
+    private int vScroll;
     public void act()
     {
         timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
             createEnemCriatura();
+        }
+         
+        if(vScroll != 0)
+        {
+           scrollWorld();
+          
         }
     }
     
@@ -32,15 +38,10 @@ public class Escenario1 extends World
     public Escenario1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1,false); 
+        super(1000, 600, 1,true); 
        
-       scroll = new ImgScroll(this,new GreenfootImage("ecenario1.png"),1700,1500);
-       /**for(int j=0; j<scroll.getScrollHeight()-100; j+=300)
-       {
-         for(int i=0; i<scroll.getScrollWidth()-200;i+=300)
-         {
-          }
-        }*/
+       
+       //setBackground ("ecenario1.png");
         prepare();
         play();
         loop();
@@ -70,6 +71,8 @@ public class Escenario1 extends World
     
     private void prepare()
     {
+        setBackground ("ecenario1.png");
+        getBackground().scale(1000,600);
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
       addObject(enecri,100,200);
@@ -80,10 +83,38 @@ public class Escenario1 extends World
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
       //bar.setLocation(293,366);
+      vScroll = 0;
     }
     
      public void tambahSkor()
     {
         punto.add(50);
     }
+    
+    /**
+     * Realiza el apararente movimiento del mundo.
+     */
+    private void scrollWorld()  
+    {  
+        GreenfootImage bg = new GreenfootImage(getBackground());  
+        getBackground().drawImage(bg, -1, 0);  
+        getBackground().drawImage(bg, getWidth()-1, 0);  
+    }
+
+    /**
+     * @return vScrolll que es la velocidad de Scroll del mundo.
+     */
+    public int getVScroll()
+    {
+        return vScroll;
+    }
+
+    /**
+     * @param increment se suma a la velocidad de vScroll.
+     */
+    public void setVScroll(int increment)
+    {
+        vScroll+=increment;
+    }
 }
+
