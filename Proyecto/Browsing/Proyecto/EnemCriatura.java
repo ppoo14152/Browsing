@@ -18,32 +18,44 @@ public class EnemCriatura extends Movimientos
     public void act() 
     {
         // acciones que realizara el enemigo criatura como lo es el movimiento.
-        //move(0.5);
-        move(1);
+         //move(0.5);
+    
         if(isAtEdge() || getX()>750) 
         {  
-         turn(180);
-         getImage().mirrorVertically();   
+         //turn(180);
+        // getImage().mirrorVertically();   
+         //if(q%2==0)
+          //  {
+                disparar();
+                //q=q%2;
+                //q+=1;
+                
+          }
+            //else 
+              //  q+=1;
         
-        } 
         
-        disparar();
+        
           
-        }
+    }
      
     public void disparar()
     {
-        mov();
-        q++;
-        if(q==1)
+        //move(0.5);
+        
+        //DisparoCri dc1 = new DisparoCri ();
+         //getWorld().addObject(dc1,getX(),getY());
+         q++;
+         if(q==1)
         {
-         DisparoCria1 dc1 = new DisparoCria1 ();
+         
+         DisparoCri dc1 = new DisparoCri ();
          getWorld().addObject(dc1,getX(),getY());
-         dc1.turn(getRotation());
+         //dc1.turn(getRotation());
         }
         if(q==4)
         {
-            q=0;
+         q=0;
         }
         
           if(isTouching(Barco1user.class))
@@ -51,15 +63,11 @@ public class EnemCriatura extends Movimientos
             //((Escenario1)getWorld()).gameOver();
             Fuego fuego = new Fuego();
             getWorld().addObject(fuego, getX(), getY());
-            getWorld().removeObject(this);
+            getWorld().removeObject(this);   move(0.5);
+       
         }
         }
-        
-        public void mov()
-        {
-            c= Greenfoot.getRandomNumber(5);
-            move(c);
-        }
+       
     }
         
       

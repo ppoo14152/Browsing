@@ -24,6 +24,9 @@ public class Creditos extends Botones
         {
             World myWorld = getWorld();
             Menu men = (Menu)myWorld;
+           
+            Greenfoot.playSound("splash.mp3");
+            Greenfoot.delay(100);
             //men.stop();
             Greenfoot.setWorld(new Credit());
         }

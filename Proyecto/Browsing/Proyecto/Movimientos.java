@@ -9,7 +9,8 @@ import greenfoot.*;
  */
 public class Movimientos extends Actor
 {
-   /**private double exactX;
+   private int damage;
+   private double exactX;
     private double exactY;
    
     public void move(int distance)
@@ -47,5 +48,14 @@ public class Movimientos extends Actor
     public double getExactY() 
     {
         return exactY;
-    }*/
+    }
+    
+    /**
+     * 
+     */
+    public int getDamage()
+    {
+        return damage;
+    }
+    
 }

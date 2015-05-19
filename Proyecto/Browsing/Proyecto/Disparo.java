@@ -18,7 +18,7 @@ public class Disparo extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        move(1);
+        move(-1);
         if(isAtEdge())
             getWorld().removeObject(this);
         else if(isTouching(EnemCriatura.class))

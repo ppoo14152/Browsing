@@ -1,5 +1,9 @@
 import greenfoot.*;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.image.*;
+
 /**
  * Write a description of class Escenario1 here.
  * 
@@ -47,11 +51,17 @@ public class Escenario1 extends World
         loop();
     }
     
+    /**
+     * Metodo para poder activar la musica del juego
+     */
     public void play()
     {
         bgMusic.play();
     }
     
+    /**
+     * Metodo para deterner el sonido que actua en el juego
+     */
     public void stop()
     {
         bgMusic.stop();
@@ -62,20 +72,30 @@ public class Escenario1 extends World
         bgMusic.playLoop();
     }
     
+    /**
+     * Metodo para crear la criatura uno para el primer nivel
+     */
     public void createEnemCriatura()
     {
         EnemCriatura ene = new EnemCriatura();
-        addObject(ene, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(300));
-        ene.turn(Greenfoot.getRandomNumber(100));
+        //addObject(ene, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(75));
+        //ene.turn(Greenfoot.getRandomNumber(100));
     }
     
+    /**
+     * Metodo en el cual se activa y pone todo lo necesario para poner  
+     * en marche el juego en el primer escenario
+     */
     private void prepare()
     {
         setBackground ("ecenario1.png");
+        setPaintOrder(Vida.class);
         getBackground().scale(1000,600);
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
-      addObject(enecri,100,200);
+      EnemCriatura enec = new EnemCriatura();
+      addObject(enecri,100,520);
+      addObject(enec,100,410);
       //for(int i = 0 ; i<2; i++)
       //{
           createEnemCriatura();
@@ -86,6 +106,9 @@ public class Escenario1 extends World
       vScroll = 0;
     }
     
+    /**
+     * Metodo para la puntuacion
+     */
      public void tambahSkor()
     {
         punto.add(50);
@@ -110,7 +133,7 @@ public class Escenario1 extends World
     }
 
     /**
-     * @param increment se suma a la velocidad de vScroll.
+     * para incrementr la suma a la velocidad de vScroll.
      */
     public void setVScroll(int increment)
     {

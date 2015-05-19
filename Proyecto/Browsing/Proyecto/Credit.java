@@ -22,7 +22,7 @@ public class Credit extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
         MainMenu mainmenu = new MainMenu();
-        addObject(mainmenu, 402, 564);
+        addObject(mainmenu, 102, 564);
     }
 }
 

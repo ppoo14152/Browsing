@@ -20,7 +20,9 @@ public class MainMenu extends Botones
         // Add your action code here.
          if(Greenfoot.mouseClicked(this))
         {
+            Greenfoot.playSound("splash.mp3");
             Greenfoot.setWorld(new Menu());
+            
         }
     }    
 }

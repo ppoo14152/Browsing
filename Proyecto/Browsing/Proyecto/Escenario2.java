@@ -14,6 +14,13 @@ public class Escenario2 extends World
     Puntos punto = new Puntos("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
 
+    
+    public void createEnemCriatura2()
+    {
+        EnemCriatura ene = new EnemCriatura();
+        //addObject(ene, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(75));
+        //ene.turn(Greenfoot.getRandomNumber(100));
+    }
     /**
      * Constructor for objects of class Escenario2.
      * 
@@ -27,10 +34,10 @@ public class Escenario2 extends World
         loop();
     }
     
-    /**public void act()
-    {
+    //public void act()
+    //{
     
-    }*/
+    //}
     
     public void play()
     {

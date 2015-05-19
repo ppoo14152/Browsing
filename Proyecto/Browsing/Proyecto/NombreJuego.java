@@ -22,11 +22,11 @@ public class NombreJuego extends Botones
     public void act() 
     {
         // Add your action code here.
-        //NombreJuego();
+        NombreJuego();
     
      }
      
-    public NombreJuego()
+    public void NombreJuego()
     {
         nomj = new GreenfootImage[3];
         cont =1;
