@@ -28,7 +28,7 @@ public class Barco1user extends Movimientos
            }
             //mueve a el barco para la izquierda
         else if(Greenfoot.isKeyDown("left")){
-            move(-1);
+            move(-4);
         }
         
         //mover para arriba a el barco del usuario

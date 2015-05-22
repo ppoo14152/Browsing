@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 
 import java.awt.*;
@@ -18,8 +19,11 @@ public class Escenario1 extends World
     private int timeSpawn = 0;
     Puntos punto = new Puntos("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
-    //public ImgScroll scroll;
+    public ImgScroll scroll;
     private int vScroll;
+    Vida vidaBarra = new Vida();
+    private Cadenas vid;
+    
     public void act()
     {
         timeSpawn++;
@@ -27,12 +31,14 @@ public class Escenario1 extends World
             timeSpawn = 0;
             createEnemCriatura();
         }
+        
          
-        if(vScroll != 0)
-        {
+         //MuestraVida();
+        //if(vScroll != 0)
+        //{
            scrollWorld();
           
-        }
+        //}
     }
     
     /**
@@ -43,14 +49,29 @@ public class Escenario1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1,true); 
-       
-       
-       //setBackground ("ecenario1.png");
-        prepare();
+        
+        vid = new Cadenas("Vida ");
+         
+        setBackground ("ecenario1.png");
+       getBackground().setColor(Color.BLACK);
+       getBackground().fill();
+       prepare();
         play();
         loop();
     }
     
+    public void MuestraVida()
+    {
+        //World mundo;
+        //mundo=getWorld();     
+        //vid.despliegaTex("",30);
+        //mundo.addOject(vid,810,25);
+    }
+    
+    public Vida vidaBarra()
+    {
+        return vidaBarra;
+    }
     /**
      * Metodo para poder activar la musica del juego
      */
@@ -102,6 +123,8 @@ public class Escenario1 extends World
         //}
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
+      addObject(vidaBarra,825,25);
+      //addOjectt((String)("Vida: "),810,25);
       //bar.setLocation(293,366);
       vScroll = 0;
     }

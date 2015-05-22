@@ -8,13 +8,21 @@ import greenfoot.*;
  * @version 21 de abril del 2015
  * @version ultima modificacion 04 de mayo del 2015
  */
-public class ImgScroll
+public class ImgScroll 
 {
-    private World scrollWorld; 
+     private World scrollWorld; 
     private GreenfootImage[][] scrollIma;  
     private int scrollWidth, scrollHeight; // area de las dimensiones del scroll
     private int worldWidth, worldHeight; //  dimensiones de el area de juego(escenario)
     private int xScrAmt, yScrAmt; //
+    /**
+     * Act - do whatever the ImgScroll wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Add your action code here.
+    } 
     
     /**
      */

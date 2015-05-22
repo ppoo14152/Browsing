@@ -14,7 +14,7 @@ public class Escenario2 extends World
     Puntos punto = new Puntos("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
 
-    
+    private int vScroll;
     public void createEnemCriatura2()
     {
         EnemCriatura ene = new EnemCriatura();
@@ -34,10 +34,10 @@ public class Escenario2 extends World
         loop();
     }
     
-    //public void act()
-    //{
-    
-    //}
+    public void act()
+    {
+      scrollWorld();
+    }
     
     public void play()
     {
@@ -64,8 +64,39 @@ public class Escenario2 extends World
         //bar2.setLocation(293,366);
     }
     
-    public void tambahSkor()
+    /**
+     * Metodo para la puntuacion
+     */
+     public void tambahSkor()
     {
         punto.add(50);
     }
+    
+    /**
+     * Realiza el apararente movimiento del mundo.
+     */
+    private void scrollWorld()  
+    {  
+        GreenfootImage bg = new GreenfootImage(getBackground());  
+        getBackground().drawImage(bg, -1, 0);  
+        getBackground().drawImage(bg, getWidth()-1, 0);  
+    }
+
+    /**
+     * @return vScrolll que es la velocidad de Scroll del mundo.
+     */
+    public int getVScroll()
+    {
+        return vScroll;
+    }
+
+    /**
+     * para incrementr la suma a la velocidad de vScroll.
+     */
+    public void setVScroll(int increment)
+    {
+        vScroll+=increment;
+    }
 }
+
+
