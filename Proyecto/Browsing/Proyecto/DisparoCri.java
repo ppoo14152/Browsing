@@ -16,6 +16,7 @@ public class DisparoCri extends Movimientos
     public void act() 
     {
         // Add your action code here.
+        move(1);
         if(getX()>0)
         mueve();
         else

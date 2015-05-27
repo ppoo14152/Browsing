@@ -26,6 +26,6 @@ public class Cadenas extends Actor
     }
      public void despliegaTex(String cadena,int tam)
     {
-        super.setImage(new GreenfootImage(cadena1+cadena,tam,java.awt.Color.YELLOW,null));
+        super.setImage(new GreenfootImage(cadena1+cadena,tam,java.awt.Color.RED,null));
     }
 }
