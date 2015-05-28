@@ -3,8 +3,9 @@ import greenfoot.*;
 /**
  * Write a description of class Cadenas here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author Efraín Jacobo Tovar 
+ * @version 22 de mayo del 2015
  */
 public class Cadenas extends Actor
 {

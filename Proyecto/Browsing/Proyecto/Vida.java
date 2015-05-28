@@ -4,8 +4,9 @@ import java.awt.Graphics;
 /**
  * Write a description of class Vida here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author zarazua lopez vicente
+ * @author Efraín Jacobo Tovar 
+ * @version 21 de mayo del 2015
  */
 public class Vida extends Actor
 {

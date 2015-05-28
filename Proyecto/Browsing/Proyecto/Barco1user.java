@@ -96,7 +96,7 @@ public class Barco1user extends Movimientos
      if(vida == 0)
      {
        jugador.saveHighscore(puntos);
-       //Greenfoot.setWorld(new Fin);
+       Greenfoot.setWorld(new Fin(1));
       }
     }
     

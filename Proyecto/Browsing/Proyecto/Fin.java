@@ -3,8 +3,9 @@ import greenfoot.*;
 /**
  * Write a description of class Fin here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+  * @author zarazua lopez vicente
+ * @author Efraín Jacobo Tovar 
+ * @version 26 de mayo del 2015
  */
 public class Fin extends World
 {
