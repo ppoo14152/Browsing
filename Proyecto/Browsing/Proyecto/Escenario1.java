@@ -22,7 +22,8 @@ public class Escenario1 extends World
     public ImgScroll scroll;
     private int vScroll;
     Vida vidaBarra = new Vida();
-    private Cadenas vid;
+    VidaEnemigoF barraEne = new VidaEnemigoF(); 
+   
     
     public void act()
     {
@@ -32,13 +33,11 @@ public class Escenario1 extends World
             createEnemCriatura();
         }
         
-         
-         //MuestraVida();
+        
         //if(vScroll != 0)
-        //{
            scrollWorld();
           
-        //}
+        
     }
     
     /**
@@ -49,8 +48,6 @@ public class Escenario1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1,true); 
-        
-        vid = new Cadenas("Vida ");
          
         setBackground ("ecenario1.png");
        getBackground().setColor(Color.BLACK);
@@ -60,17 +57,14 @@ public class Escenario1 extends World
         loop();
     }
     
-    public void MuestraVida()
-    {
-        //World mundo;
-        //mundo=getWorld();     
-        //vid.despliegaTex("",30);
-        //mundo.addOject(vid,810,25);
-    }
-    
-    public Vida vidaBarra()
+    public Vida getvidaBarra()
     {
         return vidaBarra;
+    }
+    
+    public VidaEnemigoF getbarraEne()
+    {
+        return barraEne;
     }
     /**
      * Metodo para poder activar la musica del juego
@@ -109,9 +103,16 @@ public class Escenario1 extends World
      */
     private void prepare()
     {
-        setBackground ("ecenario1.png");
-        setPaintOrder(Vida.class);
-        getBackground().scale(1000,600);
+      ///////////////vida para el jugador/////////////
+      setBackground ("ecenario1.png");
+      setPaintOrder(Vida.class);
+      getBackground().scale(1000,600);
+      addObject(vidaBarra,825,25);
+      /////////////vida para el enemigo final//////////////
+      setPaintOrder(VidaEnemigoF.class);
+      getBackground().scale(1000,600);
+      addObject(barraEne,280,25);
+      
       addObject(punto, 500, 27);
       EnemCriatura enecri = new EnemCriatura();
       EnemCriatura enec = new EnemCriatura();
@@ -123,7 +124,7 @@ public class Escenario1 extends World
         //}
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
-      addObject(vidaBarra,825,25);
+    
       //addOjectt((String)("Vida: "),810,25);
       //bar.setLocation(293,366);
       vScroll = 0;
@@ -162,5 +163,6 @@ public class Escenario1 extends World
     {
         vScroll+=increment;
     }
+    
 }
 

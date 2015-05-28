@@ -10,6 +10,13 @@ import greenfoot.*;
 public class Barco1user extends Movimientos
 {
     private int q=0;
+    private Cadenas vid;
+    private Cadenas vidEne;
+    private SimpleTimer timer;
+    private Save jugador=new Save();
+    private int puntos=0;
+    
+    private int vida = 200;
     /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,8 +25,17 @@ public class Barco1user extends Movimientos
     {
         
         Movimientos();
+        MuestraVida();
+        MuestraVidaEne();
         
     }    
+    public Barco1user()
+    {
+     vid = new Cadenas("Vida ");
+     vidEne = new Cadenas("Enemigo ");
+     
+    }
+    
     public void Movimientos()
     {
      //mueve a el barco para la derecha
@@ -61,5 +77,39 @@ public class Barco1user extends Movimientos
             getWorld().addObject(fuego, getX(), getY());
             getWorld().removeObject(this);
         }
+    
     }
+    
+    public void danio()
+    {
+     World miMundo = getWorld();
+     Escenario1 escenario = (Escenario1)miMundo;
+     Vida vidaBarra = escenario.getvidaBarra();
+     if(isTouching(DisparoCri.class))
+     {
+         vida--;
+         vidaBarra.detectaPresen();
+         Fuego fuego = new Fuego();
+         getWorld().addObject(fuego, getX(), getY());
+     }
+     
+     if(vida == 0)
+     {
+       jugador.saveHighscore(puntos);
+       //Greenfoot.setWorld(new Fin);
+      }
+    }
+    
+    public void MuestraVida()
+    {
+        vid.despliegaTex("",30);
+        getWorld().addObject(vid,645,25);
+    }
+
+     public void MuestraVidaEne()
+    {
+        vidEne.despliegaTex("",30);
+        getWorld().addObject(vidEne,75,25);
+    }
+    
 }

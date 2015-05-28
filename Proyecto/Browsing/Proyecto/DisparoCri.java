@@ -16,8 +16,8 @@ public class DisparoCri extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        move(1);
-        if(getX()>0)
+        
+        if(getX()>getWorld().getWidth())
         mueve();
         else
         getWorld().removeObject(this);
@@ -29,7 +29,7 @@ public class DisparoCri extends Movimientos
      */
     public void mueve()
     {
-        int x=getX(), y= getY();
+        int x=getX()+40, y= getY();
         setLocation(x,y);
     }
     

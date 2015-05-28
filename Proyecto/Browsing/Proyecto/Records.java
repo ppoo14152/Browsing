@@ -23,7 +23,8 @@ public class Records extends Botones
             //men.stop();
 
             Greenfoot.playSound("splash.mp3");
-            Greenfoot.delay(250);
+            Greenfoot.delay(100);
+             Greenfoot.setWorld(new Record());
 
         }
         

@@ -56,9 +56,9 @@ public class Puntos extends Actor
     /**
      * Se añaden las nuevas puntuaciones segun el contador 
      */
-    public void add(int punt)
+    public void add(int score)
     {
-        target += punt;
+        target += score;
     }
     
     /**
