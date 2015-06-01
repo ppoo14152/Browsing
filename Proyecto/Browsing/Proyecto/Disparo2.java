@@ -17,16 +17,16 @@ public class Disparo2 extends Movimientos
         // Add your action code here.
            move(-6);
          if(isAtEdge())
+         {
             getWorld().removeObject(this);
-      
-        //else
+        }
        if(isTouching(EnemCriatura2.class))
      {
-       removeTouching(EnemCriatura2.class);
+       //removeTouching(EnemCriatura2.class);
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY()); 
            
-       ((Escenario2)getWorld()).aumentaPuntos(75);
+       ((Escenario2)getWorld()).aumentaPuntos(20);
            
        Greenfoot.playSound("blast.wav");
 

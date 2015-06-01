@@ -18,27 +18,23 @@ public class Disparo extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        move(-6);
-         if(isAtEdge())
-            getWorld().removeObject(this);
-      
-        //else
-       if(isTouching(EnemCriatura.class))
+     move(-6); 
+     if(isAtEdge())
      {
-       removeTouching(EnemCriatura.class);
+      getWorld().removeObject(this);
+     }
+      if(isTouching(EnemCriatura.class))
+      {
+       //removeTouching(EnemCriatura.class);
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY()); 
            
-       ((Escenario1)getWorld()).aumentaPuntos(50);
+       ((Escenario1)getWorld()).aumentaPuntos(10);
            
        Greenfoot.playSound("blast.wav");
 
        getWorld().removeObject(this);
-          
-     } 
+      } 
      
-       
-        
     }   
-    
 }

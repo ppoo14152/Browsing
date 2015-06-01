@@ -15,10 +15,8 @@ public class Barco2user extends Movimientos
     private Cadenas vid;
     private Cadenas vidEne;
     private Cadenas pun;
-
     private Save jugador=new Save();
     private Counter score;
-   
     private int puntos=200;
     private int vida = 200;
     
@@ -101,30 +99,26 @@ public class Barco2user extends Movimientos
      World miMundo = getWorld();
      Escenario2 escenario2 = (Escenario2)miMundo;
      Vida vidaBarra = escenario2.getvidaBarra();
-     //((Escenario1)getWorld()).tambahSkor();
-     if(isTouching(Rocas.class))
+          if(isTouching(Rocas.class))
      {
          vida--;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
      }
-     
-     if(isTouching(EnemCriatura2.class))
+          if(isTouching(EnemCriatura2.class))
      {
       vida-=10;
       vidaBarra.detectaPresen();
       Fuego fuego = new Fuego();
       getWorld().addObject(fuego, getX(), getY());
      }
-     
-     
      if(vida == 0)
      {
        jugador.saveHighscore(puntos);
        Greenfoot.setWorld(new Fin(1));
        ((Escenario2)getWorld()).stop();
-      }
+     }
     }
     
 }

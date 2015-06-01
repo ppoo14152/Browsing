@@ -85,28 +85,26 @@ public class Barco1user extends Movimientos
      World miMundo = getWorld();
      Escenario1 escenario = (Escenario1)miMundo;
      Vida vidaBarra = escenario.getvidaBarra();
-     //((Escenario1)getWorld()).tambahSkor();
-     if(isTouching(DisparoCri.class))
-     {
+      if(isTouching(DisparoCri.class))
+      {
+           
          vida--;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
-     }
-     
+     }     
      if(isTouching(EnemCriatura.class))
      {
       vida-=10;
       vidaBarra.detectaPresen();
       Fuego fuego = new Fuego();
       getWorld().addObject(fuego, getX(), getY());
+      
      }
-     
-     
      if(vida == 0)
      {
        //jugador.saveHighscore( perdiste());
-       capturaPuntaje();
+       //capturaPuntaje();
        
        Greenfoot.setWorld(new Fin(1));
        ((Escenario1)getWorld()).stop();
