@@ -9,6 +9,7 @@ import greenfoot.*;
  */
 public class DisparoCri extends Movimientos
 {
+    private int rand;
     /**
      * Act - do whatever the DisparoCria1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,22 +17,23 @@ public class DisparoCri extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        
-        if(getX()>getWorld().getWidth())
+       
+        if(getX()<getWorld().getWidth())
         mueve();
         else
         getWorld().removeObject(this);
        
     }   
     
-         /**
+     /**
      * Metodo para mover los disparos de las criaturas
      */
     public void mueve()
     {
-        int x=getX()+40, y= getY();
+        int x=getX()+10, y= getY();
         setLocation(x,y);
     }
+    
     
 }
 

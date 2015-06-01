@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.image.*;
 /**
  * Write a description of class Escenario2 here.
  * @author zarazua lopez vicente
@@ -11,16 +14,13 @@ import greenfoot.*;
 public class Escenario2 extends World
 {
     int timeSpawn = 0;
-    Puntos punto = new Puntos("Puntos : ");
+    Counter punto = new Counter("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
-
+    public ImgScroll scroll;
     private int vScroll;
-    public void createEnemCriatura2()
-    {
-        EnemCriatura ene = new EnemCriatura();
-        //addObject(ene, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(75));
-        //ene.turn(Greenfoot.getRandomNumber(100));
-    }
+    Vida vidaBarra = new Vida();
+    VidaEnemigoF barraEne = new VidaEnemigoF();
+  
     /**
      * Constructor for objects of class Escenario2.
      * 
@@ -29,19 +29,46 @@ public class Escenario2 extends World
     {    
         // Create a new world with 1000x600 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
+       setBackground ("ecen2.png");
+       getBackground().setColor(Color.BLACK);
+       getBackground().fill();
         prepare();
         play();
         loop();
     }
     
+    public Vida getvidaBarra()
+    {
+        return vidaBarra;
+    }
+    
+    public VidaEnemigoF getbarraEne()
+    {
+        return barraEne;
+    }
+    
     public void act()
     {
+      timeSpawn++;
+        if(timeSpawn>700){
+            timeSpawn = 0;
+            createEnemCriatura2();
+        }
+        
       scrollWorld();
     }
     
     public void play()
     {
         bgMusic.play();
+    }
+    
+      
+    public void createEnemCriatura2()
+    {
+        EnemCriatura2 ene = new EnemCriatura2();
+        //addObject(ene, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(75));
+        //ene.turn(Greenfoot.getRandomNumber(100));
     }
     
     public void stop()
@@ -53,25 +80,44 @@ public class Escenario2 extends World
     {
         bgMusic.playLoop();
     }
+    
     /**
      * Metodo para agregar los elementos a el escenario
      */
     public void prepare()
     {
-        addObject(punto,300,30);
-        Barco2user bar2 = new Barco2user();
-        addObject(bar2,800,500);
+      setBackground ("ecen2.png");
+      setPaintOrder(Vida.class);
+      getBackground().scale(1000,600);
+      addObject(vidaBarra,825,25);
+      /////////////vida para el enemigo final//////////////
+      setPaintOrder(VidaEnemigoF.class);
+      getBackground().scale(1000,600);
+      addObject(barraEne,280,25);
+      
+      addObject(punto, 500, 27);
+      
+      EnemCriatura2 enecri = new EnemCriatura2();
+      EnemCriatura2 enec = new EnemCriatura2();
+      addObject(enecri,100,520);
+      addObject(enec,100,410);
+      createEnemCriatura2();
+      Barco2user bar2 = new Barco2user();
+      addObject(bar2,800,500);
         //bar2.setLocation(293,366);
+        
+      vScroll = 0;
     }
     
+  
     /**
-     * Metodo para la puntuacion
+     * 
      */
-     public void tambahSkor()
+    public void aumentaPuntos(int cant)
     {
-        punto.add(50);
+        punto.add(cant);
     }
-    
+   
     /**
      * Realiza el apararente movimiento del mundo.
      */

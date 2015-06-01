@@ -1,6 +1,6 @@
 
 import greenfoot.*;
-
+import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.image.*;
@@ -16,14 +16,13 @@ import java.awt.image.*;
 
 public class Escenario1 extends World
 {
-    private int timeSpawn = 0;
-    Puntos punto = new Puntos("Puntos : ");
-    GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+   private int timeSpawn = 0;
+   Counter punto = new Counter("Puntos : ");
+   GreenfootSound bgMusic = new GreenfootSound("bg.wav");
     public ImgScroll scroll;
     private int vScroll;
     Vida vidaBarra = new Vida();
-    VidaEnemigoF barraEne = new VidaEnemigoF(); 
-   
+    VidaEnemigoF barraEne = new VidaEnemigoF();
     
     public void act()
     {
@@ -33,10 +32,8 @@ public class Escenario1 extends World
             createEnemCriatura();
         }
         
-        
         //if(vScroll != 0)
            scrollWorld();
-          
         
     }
     
@@ -48,7 +45,7 @@ public class Escenario1 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1,true); 
-         
+       
         setBackground ("ecenario1.png");
        getBackground().setColor(Color.BLACK);
        getBackground().fill();
@@ -57,6 +54,8 @@ public class Escenario1 extends World
         loop();
     }
     
+    
+ 
     public Vida getvidaBarra()
     {
         return vidaBarra;
@@ -114,6 +113,7 @@ public class Escenario1 extends World
       addObject(barraEne,280,25);
       
       addObject(punto, 500, 27);
+      
       EnemCriatura enecri = new EnemCriatura();
       EnemCriatura enec = new EnemCriatura();
       addObject(enecri,100,520);
@@ -131,13 +131,14 @@ public class Escenario1 extends World
     }
     
     /**
-     * Metodo para la puntuacion
+     * 
      */
-     public void tambahSkor()
+    public void aumentaPuntos(int cant)
     {
-        punto.add(50);
+        punto.add(cant);
     }
-    
+   
+   
     /**
      * Realiza el apararente movimiento del mundo.
      */
@@ -155,6 +156,7 @@ public class Escenario1 extends World
     {
         return vScroll;
     }
+    
 
     /**
      * para incrementr la suma a la velocidad de vScroll.

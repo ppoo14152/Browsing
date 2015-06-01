@@ -11,6 +11,8 @@ import greenfoot.*;
  */
 public class EnemCriatura2 extends Movimientos
 {
+    private int q=0;
+    private int rand;
     /**
      * Act - do whatever the EnemCriatura2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,13 +22,45 @@ public class EnemCriatura2 extends Movimientos
         // Add your action code here.
         
         //move(0.5);
-        move(1);
-        if(isAtEdge() || getX()>750) 
-        {  
-         turn(180);
-         getImage().mirrorVertically();   
+        //move(1);
+        //if(isAtEdge() || getX()>750) 
+        //{  
+         //turn(180);
+         //getImage().mirrorVertically();   
+     disparar();
+    if(isTouching(Barco2user.class))
+     {
+      //((Escenario1)getWorld()).gameOver();
+      Fuego fuego = new Fuego();
+      getWorld().addObject(fuego, getX()+10, getY());
+      getWorld().removeObject(this);   
+     
+     }    
+    }
+    
+    public EnemCriatura2()
+    {
+    }
+    
+    public void disparar()
+    {
+       
+       
+       ;
+         q++;
+         if(q==1)
+        {
+         
+         Rocas rc = new Rocas();
+         getWorld().addObject(rc,getX(),getY());
+         rc.setRotation(getRotation());
+        }
+        if(q==50)
+        {
+         q=0;
+        }
         
-        } 
-        
-    }    
+        }
+       
+    
 }

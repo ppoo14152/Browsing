@@ -11,8 +11,17 @@ import greenfoot.*;
  */
 public class Barco3user extends Movimientos
 {
-    private double lastShot;
     int count=0;
+     private int q=0;
+    private Cadenas vid;
+    private Cadenas vidEne;
+    private Cadenas pun;
+
+    private Save jugador=new Save();
+    private Counter score;
+   
+    private int puntos=0;
+    private int vida = 200;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -29,7 +38,17 @@ public class Barco3user extends Movimientos
             count++;
         }
         movimientos();
+        MuestraVida();
+        MuestraVidaEne();
         disparar();
+        danio();
+    }
+    
+      public Barco3user()
+    {
+     vid = new Cadenas("Vida ");
+     vidEne = new Cadenas("Enemigo ");
+       
     }
     
     private void movimientos()
@@ -40,7 +59,7 @@ public class Barco3user extends Movimientos
     }
       //mueve a el barco para la izquierda
      else if(Greenfoot.isKeyDown("left")){
-     move(-1);
+     move(-4);
     }
     //mover para arriba a el barco del usuario
     if(Greenfoot.isKeyDown("up")){
@@ -58,14 +77,57 @@ public class Barco3user extends Movimientos
         if(("space").equals(Greenfoot.getKey()))
         //if (Greenfoot.isKeyDown("space"))//&& System.currentTimeMillis()>lastShot+300)
         {
-           Disparo dis = new Disparo();
+           Disparo3 di = new Disparo3();
           
-           getWorld().addObject(dis, getX(), getY());
+           getWorld().addObject(di, getX(), getY());
            
-           dis.turn(getRotation());
+           di.turn(getRotation());
            //dis.setRotation(getRotation());
            //lastShot = System.currentTimeMillis();
            Greenfoot.playSound("kri-fire.wav");
         }
-    }    
+    }
+    
+     public void danio()
+    {
+     World miMundo = getWorld();
+     Escenario3 escenario3 = (Escenario3)miMundo;
+     Vida vidaBarra = escenario3.getvidaBarra();
+     //((Escenario1)getWorld()).tambahSkor();
+     if(isTouching(Llamas.class))
+     {
+         vida--;
+         vidaBarra.detectaPresen();
+         Fuego fuego = new Fuego();
+         getWorld().addObject(fuego, getX(), getY());
+     }
+     
+     if(isTouching(EnemCriatura3.class))
+     {
+      vida-=10;
+      vidaBarra.detectaPresen();
+      Fuego fuego = new Fuego();
+      getWorld().addObject(fuego, getX(), getY());
+     }
+     
+     
+     if(vida == 0)
+     {
+       jugador.saveHighscore(puntos);
+       Greenfoot.setWorld(new Fin(1));
+       ((Escenario3)getWorld()).stop();
+      }
+    }
+    
+     public void MuestraVida()
+    {
+        vid.despliegaTex("",30);
+        getWorld().addObject(vid,645,25);
+    }
+
+     public void MuestraVidaEne()
+    {
+        vidEne.despliegaTex("",30);
+        getWorld().addObject(vidEne,75,25);
+    }
 }

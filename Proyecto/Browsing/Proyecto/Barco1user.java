@@ -12,10 +12,10 @@ public class Barco1user extends Movimientos
     private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
-    private SimpleTimer timer;
-    private Save jugador=new Save();
-    private int puntos=0;
-    
+    private Cadenas pun;
+
+     Vida vidaBarra = new Vida();
+    private Counter score;
     private int vida = 200;
     /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
@@ -23,17 +23,20 @@ public class Barco1user extends Movimientos
      */
     public void act() 
     {
-        
         Movimientos();
         MuestraVida();
         MuestraVidaEne();
+       danio(); 
+       
         
-    }    
+    }
+   
+    
     public Barco1user()
     {
      vid = new Cadenas("Vida ");
      vidEne = new Cadenas("Enemigo ");
-     
+      
     }
     
     public void Movimientos()
@@ -69,15 +72,12 @@ public class Barco1user extends Movimientos
               
            Greenfoot.playSound("kri-fire.wav");
         }
-        
-        if(isTouching(EnemCriatura.class))
-        {
-            //((Escenario1)getWorld()).gameOver();
-            Fuego fuego = new Fuego();
-            getWorld().addObject(fuego, getX(), getY());
-            getWorld().removeObject(this);
-        }
     
+    }
+  
+     public int getVida()
+    {
+        return vida;
     }
     
     public void danio()
@@ -85,6 +85,7 @@ public class Barco1user extends Movimientos
      World miMundo = getWorld();
      Escenario1 escenario = (Escenario1)miMundo;
      Vida vidaBarra = escenario.getvidaBarra();
+     //((Escenario1)getWorld()).tambahSkor();
      if(isTouching(DisparoCri.class))
      {
          vida--;
@@ -93,14 +94,45 @@ public class Barco1user extends Movimientos
          getWorld().addObject(fuego, getX(), getY());
      }
      
+     if(isTouching(EnemCriatura.class))
+     {
+      vida-=10;
+      vidaBarra.detectaPresen();
+      Fuego fuego = new Fuego();
+      getWorld().addObject(fuego, getX(), getY());
+     }
+     
+     
      if(vida == 0)
      {
-       jugador.saveHighscore(puntos);
+       //jugador.saveHighscore( perdiste());
+       capturaPuntaje();
+       
        Greenfoot.setWorld(new Fin(1));
-      }
+       ((Escenario1)getWorld()).stop();
     }
+}
+     
+       /**
+     * This method save the records of the user.
+     *
+     */
+    public void capturaPuntaje()
+    {
+         if (UserInfo.isStorageAvailable()) 
+        {
+            UserInfo myInfo = UserInfo.getMyInfo();
+            if (score.getValue() > myInfo.getScore()) 
+            {
+                myInfo.setScore(score.getValue());
+                myInfo.store();  
+            }
+        }  
+   }
+  
+  
     
-    public void MuestraVida()
+   public void MuestraVida()
     {
         vid.despliegaTex("",30);
         getWorld().addObject(vid,645,25);
@@ -112,4 +144,4 @@ public class Barco1user extends Movimientos
         getWorld().addObject(vidEne,75,25);
     }
     
-}
+ }
