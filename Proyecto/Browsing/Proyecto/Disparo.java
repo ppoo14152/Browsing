@@ -22,7 +22,9 @@ public class Disparo extends Movimientos
      if(isAtEdge())
      {
       getWorld().removeObject(this);
-     }
+    }
+      else
+     
       if(isTouching(EnemCriatura.class))
       {
        //removeTouching(EnemCriatura.class);

@@ -104,7 +104,7 @@ public class Barco1user extends Movimientos
      if(vida == 0)
      {
        //jugador.saveHighscore( perdiste());
-       //capturaPuntaje();
+       capturaPuntaje();
        
        Greenfoot.setWorld(new Fin(1));
        ((Escenario1)getWorld()).stop();

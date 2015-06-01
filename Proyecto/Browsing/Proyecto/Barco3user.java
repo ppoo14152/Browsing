@@ -20,7 +20,7 @@ public class Barco3user extends Movimientos
     private Save jugador=new Save();
     private Counter score;
    
-    private int puntos=0;
+    private int puntos=500;
     private int vida = 200;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever

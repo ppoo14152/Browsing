@@ -21,6 +21,7 @@ public class Disparo3 extends Movimientos
       {
         getWorld().removeObject(this);
       }
+      else
      if(isTouching(EnemCriatura3.class))
      {
        //removeTouching(EnemCriatura3.class);

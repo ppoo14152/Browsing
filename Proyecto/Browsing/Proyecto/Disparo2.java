@@ -20,6 +20,7 @@ public class Disparo2 extends Movimientos
          {
             getWorld().removeObject(this);
         }
+        else
        if(isTouching(EnemCriatura2.class))
      {
        //removeTouching(EnemCriatura2.class);
