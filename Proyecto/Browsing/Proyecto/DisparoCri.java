@@ -17,12 +17,17 @@ public class DisparoCri extends Movimientos
     public void act() 
     {
         // Add your action code here.
-       
-        if(getX()<getWorld().getWidth())
-        mueve();
+        if(isAtEdge())
+        {
+          getWorld().removeObject(this);
+        }
         else
-        getWorld().removeObject(this);
-       
+        if(getX()<getWorld().getWidth())
+        {
+          mueve();
+        }
+  
+          
     }   
     
      /**

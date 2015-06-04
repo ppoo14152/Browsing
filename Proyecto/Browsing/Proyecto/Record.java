@@ -22,7 +22,7 @@ public class Record extends World
         super(1000, 600, 1); 
         MainMenu mainmenu = new MainMenu();
         addObject(mainmenu, 902, 564);
-        s = new GreenfootSound("metal.mp3");
+        s = new GreenfootSound("records.mp3");
         t = new ScoreBoard(100,400);
         addObject(t,getWidth()/2,getHeight()/2);
     }

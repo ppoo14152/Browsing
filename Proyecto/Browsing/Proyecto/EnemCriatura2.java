@@ -17,25 +17,27 @@ public class EnemCriatura2 extends Movimientos
      * Act - do whatever the EnemCriatura2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
+     public void act() 
+      {
         // Add your action code here.
-        
-        //move(0.5);
-        //move(1);
+       //move(0.5);
         //if(isAtEdge() || getX()>750) 
         //{  
          //turn(180);
          //getImage().mirrorVertically();   
-     disparar();
-    if(isTouching(Barco2user.class))
-     {
-      //((Escenario1)getWorld()).gameOver();
-      Fuego fuego = new Fuego();
-      getWorld().addObject(fuego, getX()+10, getY());
-      getWorld().removeObject(this);   
+         disparar();
+        if(isTouching(Barco2user.class))
+       {
+        //((Escenario1)getWorld()).gameOver();
+        Fuego fuego = new Fuego();
+        getWorld().addObject(fuego, getX()+10, getY());
+        getWorld().removeObject(this);   
      
-     }    
+       } 
+      if(((Escenario2)getWorld()).punto.getValue()==100)
+      {
+        getWorld().removeObject(this);  
+      }
     }
     
     public EnemCriatura2()
@@ -44,9 +46,6 @@ public class EnemCriatura2 extends Movimientos
     
     public void disparar()
     {
-       
-       
-       ;
          q++;
          if(q==1)
         {
@@ -60,7 +59,5 @@ public class EnemCriatura2 extends Movimientos
          q=0;
         }
         
-        }
-       
-    
+    }
 }

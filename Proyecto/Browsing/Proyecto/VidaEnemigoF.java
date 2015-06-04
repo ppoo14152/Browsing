@@ -23,15 +23,15 @@ public class VidaEnemigoF extends Actor
     public void act() 
     {
         // Add your action code here.
-         actualiza();
+         actualizaE();
     }
     
     public VidaEnemigoF()
     {
-      actualiza();
+      actualizaE();
     }
     
-    public void actualiza()
+    public void actualizaE()
     {
         setImage(new GreenfootImage(VidaBarraAn + 1,VidaBarraAl + 1));
         GreenfootImage miImagen = getImage();
@@ -40,6 +40,10 @@ public class VidaEnemigoF extends Actor
         miImagen.setColor(Color.YELLOW);
         miImagen.fillRect(1, 1,vidaEne*pixelesBarra,VidaBarraAl);
         
+    }
+    public void detectaPresencia()
+    {
+        vidaEne--;
     }
 }
 

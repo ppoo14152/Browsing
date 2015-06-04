@@ -28,11 +28,11 @@ public class NombreJuego extends Botones
      
     public void NombreJuego()
     {
-        nomj = new GreenfootImage[3];
+        nomj = new GreenfootImage[1];
         cont =1;
         cuenta =0;
         numImagen =0;
-        for (int i=0;i<3;i++)
+        for (int i=0;i<1;i++)
         {
             nomj[i] = new GreenfootImage("logo"+i+".png");
         }

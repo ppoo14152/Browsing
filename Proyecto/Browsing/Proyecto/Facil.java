@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Facil extends Botones
 {
-    public boolean usingA=true;
+    private boolean usingA=true;
     /**
      * Act - do whatever the Facil wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

@@ -12,7 +12,7 @@ import greenfoot.*;
  */
 public class Medio extends Botones
 {
-    public boolean usingA=true;
+    private boolean usingA=true;
     /**
      * Act - do whatever the Medio wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +20,6 @@ public class Medio extends Botones
     public void act() 
     {
         // Add your action code here.
-        
          if(Greenfoot.mouseClicked(this))
         {
           World myWorld = getWorld();
@@ -47,6 +46,5 @@ public class Medio extends Botones
               }
             }
         }
-        
     }    
 }

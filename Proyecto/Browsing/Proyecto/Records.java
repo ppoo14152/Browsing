@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Records extends Botones
 {
-    public boolean usingA=true;
+    private boolean usingA=true;
     /**
      * Act - do whatever the Records wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,7 +27,6 @@ public class Records extends Botones
              Greenfoot.setWorld(new Record());
 
         }
-        
         {
             if (Greenfoot.mouseMoved(null)) 
             {

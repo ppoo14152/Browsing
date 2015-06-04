@@ -11,17 +11,15 @@ import greenfoot.*;
  */
 public class Barco3user extends Movimientos
 {
-    int count=0;
-     private int q=0;
+    private int count=0;
+    private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
-    private Cadenas pun;
-
     private Save jugador=new Save();
-    private Counter score;
-   
-    private int puntos=500;
-    private int vida = 200;
+    Vida vidaBarra = new Vida();
+    private int vida = 300;
+    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private int vidaE = 100;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -29,14 +27,14 @@ public class Barco3user extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        if(count==0)
-        {
-            setRotation(0);
-        }
-        if(count <= 2)
-        {
-            count++;
-        }
+        //if(count==0)
+        //{
+          //  setRotation(0);
+        //}
+        //if(count <= 2)
+        //{
+          //  count++;
+        //}
         movimientos();
         MuestraVida();
         MuestraVidaEne();
@@ -82,10 +80,19 @@ public class Barco3user extends Movimientos
            getWorld().addObject(di, getX(), getY());
            
            di.turn(getRotation());
-           //dis.setRotation(getRotation());
-           //lastShot = System.currentTimeMillis();
+
            Greenfoot.playSound("kri-fire.wav");
         }
+    }
+    
+     public int getVida()
+    {
+        return vida;
+    }
+    
+     public int getVidaE()
+    {
+        return vidaE;
     }
     
      public void danio()
@@ -94,28 +101,31 @@ public class Barco3user extends Movimientos
      Escenario3 escenario3 = (Escenario3)miMundo;
      Vida vidaBarra = escenario3.getvidaBarra();
      //((Escenario1)getWorld()).tambahSkor();
-     if(isTouching(Llamas.class))
+     if(isTouching(Llamas.class) || isTouching(Bala3.class))
      {
          vida--;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
      }
-     
-     if(isTouching(EnemCriatura3.class))
+     if(isTouching(EnemCriatura3.class)||isTouching(Enemigo3.class))
      {
-      vida-=10;
+      vida--;
       vidaBarra.detectaPresen();
       Fuego fuego = new Fuego();
       getWorld().addObject(fuego, getX(), getY());
      }
-     
-     
+     if(((Escenario3)getWorld()).punto.getValue()==150)
+       {
+         ((Escenario3)getWorld()).creaEne3();  
+         //Enemigo3 ene3 = new Enemigo3();
+         //((Escenario3)getWorld()).addObject(ene1,100,440);
+        }
      if(vida == 0)
      {
-       jugador.saveHighscore(puntos);
-       Greenfoot.setWorld(new Fin(1));
-       ((Escenario3)getWorld()).stop();
+      jugador.saveHighscore(((Escenario3)getWorld()).punto.getValue());
+      Greenfoot.setWorld(new Fin(1));
+      ((Escenario3)getWorld()).stop();
       }
     }
     

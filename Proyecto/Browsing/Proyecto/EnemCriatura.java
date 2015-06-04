@@ -27,12 +27,16 @@ public class EnemCriatura extends Movimientos
             Fuego fuego = new Fuego();
             getWorld().addObject(fuego, getX()+10, getY());
         }
+        
+         if(((Escenario1)getWorld()).punto.getValue()==50)
+         {
+           getWorld().removeObject(this);  
+         }
     }
      
     public EnemCriatura()
     {
     }
-    
    
     public void disparar()
     {
@@ -51,7 +55,6 @@ public class EnemCriatura extends Movimientos
         }
         
         }
-       
     }
         
       

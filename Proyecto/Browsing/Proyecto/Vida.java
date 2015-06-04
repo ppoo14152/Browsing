@@ -10,7 +10,7 @@ import java.awt.Graphics;
  */
 public class Vida extends Actor
 {
-    private int vida = 100;
+    private int vida = 300;
     private int VidaBarraAn = 300;
     private int VidaBarraAl = 25;
     private int pixelesBarra = (int)VidaBarraAn/vida;
@@ -42,6 +42,6 @@ public class Vida extends Actor
     
     public void detectaPresen()
     {
-        vida --;
+        vida--;
     }
 }

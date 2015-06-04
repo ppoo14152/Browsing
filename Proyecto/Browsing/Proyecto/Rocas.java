@@ -15,11 +15,15 @@ public class Rocas extends Movimientos
     public void act() 
     {
         // Add your action code here.
+          if(isAtEdge())
+        {
+          getWorld().removeObject(this);
+        }
+        else 
         if(getX()<getWorld().getWidth())
-        mueve();
-        else
-        getWorld().removeObject(this);
-       
+        {
+          mueve();
+        }
     }  
     
       /**
@@ -30,5 +34,4 @@ public class Rocas extends Movimientos
         int x=getX()+10, y= getY();
         setLocation(x,y);
     }
-    
 }

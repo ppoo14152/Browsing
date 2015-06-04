@@ -11,7 +11,7 @@ public class Movimientos extends Actor
 {
    private int damage;
    private double exactX;
-    private double exactY;
+   private double exactY;
    
     public void move(int distance)
     {

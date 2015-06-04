@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class ImgScroll 
 {
-     private World scrollWorld; 
+    private World scrollWorld; 
     private GreenfootImage[][] scrollIma;  
     private int scrollWidth, scrollHeight; // area de las dimensiones del scroll
     private int worldWidth, worldHeight; //  dimensiones de el area de juego(escenario)

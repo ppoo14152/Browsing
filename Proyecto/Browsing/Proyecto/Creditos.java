@@ -11,7 +11,7 @@ import greenfoot.*;
  */
 public class Creditos extends Botones
 {
-    public boolean usingA=true;
+    private boolean usingA=true;
     /**
      * Act - do whatever the Creditos wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,7 +19,6 @@ public class Creditos extends Botones
     public void act() 
     {
         // Add your action code here.
-        
         if(Greenfoot.mouseClicked(this))
         {
             World myWorld = getWorld();
@@ -30,7 +29,6 @@ public class Creditos extends Botones
             //men.stop();
             Greenfoot.setWorld(new Credit());
         }
-        
         {
             if (Greenfoot.mouseMoved(null)) 
             {
@@ -47,6 +45,5 @@ public class Creditos extends Botones
             }
 
         }
-        
     }    
 }

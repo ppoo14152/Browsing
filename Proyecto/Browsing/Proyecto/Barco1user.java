@@ -7,17 +7,16 @@ import greenfoot.*;
  * @version 15 de abril del 2015
  * @version 22 de abril del 2015 //agregar sonido de disparo
  */
-public class Barco1user extends Movimientos
-{
-    private int q=0;
-    private Cadenas vid;
-    private Cadenas vidEne;
-    private Cadenas pun;
-
-     Vida vidaBarra = new Vida();
-    private Counter score;
-    private int vida = 200;
-    /**
+ public class Barco1user extends Movimientos
+ {
+  private int q=0;
+  private Cadenas vid;
+  private Save jugador=new Save();
+  Vida vidaBarra = new Vida();
+  private int vida = 300;
+  VidaEnemigoF barraEne = new VidaEnemigoF();
+  private int vidaE = 100;
+  /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -25,17 +24,14 @@ public class Barco1user extends Movimientos
     {
         Movimientos();
         MuestraVida();
-        MuestraVidaEne();
-       danio(); 
-       
-        
+        danio(); 
     }
    
     
     public Barco1user()
     {
      vid = new Cadenas("Vida ");
-     vidEne = new Cadenas("Enemigo ");
+     //vidEne = new Cadenas("Enemigo ");
       
     }
     
@@ -80,66 +76,77 @@ public class Barco1user extends Movimientos
         return vida;
     }
     
-    public void danio()
+     public int getVidaE()
     {
-     World miMundo = getWorld();
-     Escenario1 escenario = (Escenario1)miMundo;
-     Vida vidaBarra = escenario.getvidaBarra();
-      if(isTouching(DisparoCri.class))
-      {
-           
+        return vidaE;
+    }
+    
+    public void danio()
+     {
+       World miMundo = getWorld();
+       Escenario1 escenario = (Escenario1)miMundo;
+       Vida vidaBarra = escenario.getvidaBarra();
+       
+       if(isTouching(DisparoCri.class) || isTouching(Bala1.class))
+        {   
          vida--;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
-     }     
-     if(isTouching(EnemCriatura.class))
-     {
-      vida-=10;
-      vidaBarra.detectaPresen();
-      Fuego fuego = new Fuego();
-      getWorld().addObject(fuego, getX(), getY());
+       }     
+       if(isTouching(EnemCriatura.class) ||isTouching(Enemigo1.class))
+       {
+        vida--;
+        vidaBarra.detectaPresen();
+        Fuego fuego = new Fuego();
+        getWorld().addObject(fuego, getX(), getY());
       
-     }
-     if(vida == 0)
-     {
-       //jugador.saveHighscore( perdiste());
-       capturaPuntaje();
+       }
        
-       Greenfoot.setWorld(new Fin(1));
-       ((Escenario1)getWorld()).stop();
-    }
-}
+       if(((Escenario1)getWorld()).punto.getValue()==50)
+       {
+         ((Escenario1)getWorld()).creaEne();  
+         //Enemigo1 ene1 = new Enemigo1();
+         //((Escenario1)getWorld()).addObject(ene1,100,440);
+        }
+        if(getVidaE() == 0)
+         {
+         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
+         Greenfoot.setWorld(new Fin(0));
+         ((Escenario1)getWorld()).stop();
+        }
+ 
+       if(getVida() == 0)
+       {
+        jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
+        //capturaPuntaje();
+        Greenfoot.setWorld(new Fin(1));
+        ((Escenario1)getWorld()).stop();
+       }
+       
+     }
      
-       /**
-     * This method save the records of the user.
-     *
-     */
+   /**
+    * This method save the records of the user.
+    *
+    */
     public void capturaPuntaje()
     {
          if (UserInfo.isStorageAvailable()) 
         {
             UserInfo myInfo = UserInfo.getMyInfo();
-            if (score.getValue() > myInfo.getScore()) 
+            if (((Escenario1)getWorld()).punto.getValue() > myInfo.getScore()) 
             {
-                myInfo.setScore(score.getValue());
+                myInfo.setScore(((Escenario1)getWorld()).punto.getValue());
                 myInfo.store();  
             }
         }  
-   }
-  
-  
-    
+    }
+   
    public void MuestraVida()
     {
         vid.despliegaTex("",30);
         getWorld().addObject(vid,645,25);
     }
 
-     public void MuestraVidaEne()
-    {
-        vidEne.despliegaTex("",30);
-        getWorld().addObject(vidEne,75,25);
-    }
-    
- }
+  }

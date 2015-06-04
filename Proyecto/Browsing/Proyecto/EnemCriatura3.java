@@ -31,16 +31,18 @@ public class EnemCriatura3 extends Movimientos
             getWorld().removeObject(this);   
        
         }
+        if(((Escenario3)getWorld()).punto.getValue()==150)
+         {
+         getWorld().removeObject(this);  
+        }
     }
     
     public EnemCriatura3()
     {
     }
     
-     public void disparar()
+    public void disparar()
     {
-       
-       
         //DisparoCri dc1 = new DisparoCri ();
          //getWorld().addObject(dc1,getX(),getY());
          q++;
@@ -56,6 +58,5 @@ public class EnemCriatura3 extends Movimientos
          q=0;
         }
         
-        }
-    
+    }
 }

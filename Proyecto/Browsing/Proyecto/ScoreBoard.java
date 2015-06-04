@@ -106,3 +106,4 @@ public class ScoreBoard extends Actor
         }
     }
 }
+

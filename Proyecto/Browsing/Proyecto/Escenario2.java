@@ -16,7 +16,7 @@ public class Escenario2 extends World
     int timeSpawn = 0;
     Counter punto = new Counter("Puntos : ");
     GreenfootSound bgMusic = new GreenfootSound("bg.wav");
-    public ImgScroll scroll;
+    private ImgScroll scroll;
     private int vScroll;
     Vida vidaBarra = new Vida();
     VidaEnemigoF barraEne = new VidaEnemigoF();
@@ -33,6 +33,7 @@ public class Escenario2 extends World
        getBackground().setColor(Color.BLACK);
        getBackground().fill();
         prepare();
+        prepare1();
         play();
         loop();
     }
@@ -52,8 +53,7 @@ public class Escenario2 extends World
       timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
-            createEnemCriatura2();
-        }
+          }
         
       scrollWorld();
     }
@@ -61,14 +61,6 @@ public class Escenario2 extends World
     public void play()
     {
         bgMusic.play();
-    }
-    
-      
-    public void createEnemCriatura2()
-    {
-        EnemCriatura2 ene = new EnemCriatura2();
-        //addObject(ene, Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(75));
-        //ene.turn(Greenfoot.getRandomNumber(100));
     }
     
     public void stop()
@@ -97,11 +89,7 @@ public class Escenario2 extends World
       
       addObject(punto, 500, 27);
       
-      EnemCriatura2 enecri = new EnemCriatura2();
-      EnemCriatura2 enec = new EnemCriatura2();
-      addObject(enecri,100,520);
-      addObject(enec,100,410);
-      createEnemCriatura2();
+      
       Barco2user bar2 = new Barco2user();
       addObject(bar2,800,500);
         //bar2.setLocation(293,366);
@@ -109,7 +97,20 @@ public class Escenario2 extends World
       vScroll = 0;
     }
     
-  
+    public void prepare1()
+    {
+      EnemCriatura2 enecri = new EnemCriatura2();
+      EnemCriatura2 enec = new EnemCriatura2();
+      addObject(enecri,100,520);
+      addObject(enec,100,410);
+      
+    }
+    
+    public void creaEne2()
+    {
+     Enemigo2 ene2 = new Enemigo2();
+     addObject(ene2,100,440);   
+    }
     /**
      * 
      */

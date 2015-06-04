@@ -10,8 +10,7 @@ import greenfoot.*;
 public class Fin extends World
 {
     private GreenfootSound s;
-
-    /**
+        /**
      * Constructor for objects of class Fin.
      * 
      */
@@ -23,6 +22,7 @@ public class Fin extends World
         {
             Mensajes gano = new Mensajes(0);
             addObject(gano,460,265);
+            s = new GreenfootSound("metal.mp3");
         }
         if(sel == 1)
         {
@@ -31,7 +31,7 @@ public class Fin extends World
            s = new GreenfootSound("gameover.wav");
         }
         
-         MainMenu mainmenu = new MainMenu();
+        MainMenu mainmenu = new MainMenu();
         addObject(mainmenu, 902, 564);
         
     }
@@ -45,7 +45,7 @@ public class Fin extends World
            if(Greenfoot.mousePressed(new MainMenu()))
             {
                  s.stop();
-                Greenfoot.setWorld(new Menu());//Al presionar boton de regresar te manda a menu
+                 Greenfoot.setWorld(new Menu());//Al presionar boton de regresar te manda a menu
             }
         }
     }
@@ -55,7 +55,7 @@ public class Fin extends World
     */
     public void stopped()
     {
-        s.pause();
+        s.stop();
     }
     
     /**

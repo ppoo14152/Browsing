@@ -11,15 +11,13 @@ import greenfoot.*;
  */
 public class Barco2user extends Movimientos
 {
-     private int q=0;
+    private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
     private Cadenas pun;
     private Save jugador=new Save();
     private Counter score;
-    private int puntos=200;
-    private int vida = 200;
-    
+    private int vida = 300;
     /**
      * Act - do whatever the Barco2user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -87,35 +85,35 @@ public class Barco2user extends Movimientos
         vidEne.despliegaTex("",30);
         getWorld().addObject(vidEne,75,25);
     }
-    
-     public void MuestraPuntos()
-    {
-        pun.despliegaTex(""+puntos,30);
-        getWorld().addObject(pun,500,100);
-    }
-    
+         
     public void danio()
     {
      World miMundo = getWorld();
      Escenario2 escenario2 = (Escenario2)miMundo;
      Vida vidaBarra = escenario2.getvidaBarra();
-          if(isTouching(Rocas.class))
-     {
+     if(isTouching(Rocas.class)|| isTouching(Bala2.class))
+       {
          vida--;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
      }
-          if(isTouching(EnemCriatura2.class))
-     {
-      vida-=10;
-      vidaBarra.detectaPresen();
-      Fuego fuego = new Fuego();
-      getWorld().addObject(fuego, getX(), getY());
-     }
+     if(isTouching(EnemCriatura2.class) ||isTouching(Enemigo2.class))
+      {
+       vida--;
+       vidaBarra.detectaPresen();
+       Fuego fuego = new Fuego();
+       getWorld().addObject(fuego, getX(), getY());
+       }
+     if(((Escenario2)getWorld()).punto.getValue()==100)
+       {
+         ((Escenario2)getWorld()).creaEne2();  
+         //Enemigo2 ene2 = new Enemigo2();
+         //((Escenario2)getWorld()).addObject(ene2,100,440);
+        }
      if(vida == 0)
      {
-       jugador.saveHighscore(puntos);
+       jugador.saveHighscore(((Escenario2)getWorld()).punto.getValue());
        Greenfoot.setWorld(new Fin(1));
        ((Escenario2)getWorld()).stop();
      }

@@ -14,12 +14,15 @@ public class Llamas extends Movimientos
      */
     public void act() 
     {
-        // Add your action code here.
+        if(isAtEdge())
+        {
+          getWorld().removeObject(this);
+        }
+        else 
         if(getX()<getWorld().getWidth())
-        mueve();
-        else
-        getWorld().removeObject(this);
-       
+        {
+          mueve();
+        }
     }    
     
      /**
