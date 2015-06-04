@@ -93,7 +93,8 @@ import greenfoot.*;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
-       }     
+       }   
+       else
        if(isTouching(EnemCriatura.class) ||isTouching(Enemigo1.class))
        {
         vida--;
@@ -102,20 +103,14 @@ import greenfoot.*;
         getWorld().addObject(fuego, getX(), getY());
       
        }
-       
+      
        if(((Escenario1)getWorld()).punto.getValue()==50)
        {
          ((Escenario1)getWorld()).creaEne();  
          //Enemigo1 ene1 = new Enemigo1();
          //((Escenario1)getWorld()).addObject(ene1,100,440);
         }
-        /*if(getVidaE() == 0)
-         {
-         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
-         Greenfoot.setWorld(new Fin(0));
-         ((Escenario1)getWorld()).stop();
-        }*/
-       
+        
        if(getVida() == 0)
        {
         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());

@@ -18,6 +18,8 @@ public class Barco2user extends Movimientos
     private Save jugador=new Save();
     private Counter score;
     private int vida = 300;
+    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private int vidaE = 100;
     /**
      * Act - do whatever the Barco2user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -74,6 +76,11 @@ public class Barco2user extends Movimientos
      vidEne = new Cadenas("Enemigo ");
     }
     
+      public int getVida()
+    {
+        return vida;
+    }
+    
     public void MuestraVida()
     {
         vid.despliegaTex("",30);
@@ -98,6 +105,7 @@ public class Barco2user extends Movimientos
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
      }
+     else
      if(isTouching(EnemCriatura2.class) ||isTouching(Enemigo2.class))
       {
        vida--;
@@ -105,13 +113,14 @@ public class Barco2user extends Movimientos
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY());
        }
+       
      if(((Escenario2)getWorld()).punto.getValue()==100)
        {
          ((Escenario2)getWorld()).creaEne2();  
-         //Enemigo2 ene2 = new Enemigo2();
-         //((Escenario2)getWorld()).addObject(ene2,100,440);
+
         }
-     if(vida == 0)
+        
+     if(getVida() == 0)
      {
        jugador.saveHighscore(((Escenario2)getWorld()).punto.getValue());
        Greenfoot.setWorld(new Fin(1));

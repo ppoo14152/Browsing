@@ -108,6 +108,7 @@ public class Barco3user extends Movimientos
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
      }
+     else
      if(isTouching(EnemCriatura3.class)||isTouching(Enemigo3.class))
      {
       vida--;
@@ -115,13 +116,15 @@ public class Barco3user extends Movimientos
       Fuego fuego = new Fuego();
       getWorld().addObject(fuego, getX(), getY());
      }
+     
      if(((Escenario3)getWorld()).punto.getValue()==150)
        {
          ((Escenario3)getWorld()).creaEne3();  
          //Enemigo3 ene3 = new Enemigo3();
          //((Escenario3)getWorld()).addObject(ene1,100,440);
         }
-     if(vida == 0)
+        
+     if(getVida() == 0)
      {
       jugador.saveHighscore(((Escenario3)getWorld()).punto.getValue());
       Greenfoot.setWorld(new Fin(1));
