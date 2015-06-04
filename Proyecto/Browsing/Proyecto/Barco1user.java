@@ -109,18 +109,25 @@ import greenfoot.*;
          //Enemigo1 ene1 = new Enemigo1();
          //((Escenario1)getWorld()).addObject(ene1,100,440);
         }
-        if(getVidaE() == 0)
+        /*if(getVidaE() == 0)
          {
          jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
          Greenfoot.setWorld(new Fin(0));
          ((Escenario1)getWorld()).stop();
-        }
- 
+        }*/
+       
        if(getVida() == 0)
        {
         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
         //capturaPuntaje();
         Greenfoot.setWorld(new Fin(1));
+        ((Escenario1)getWorld()).stop();
+       }
+       else
+       if(((Escenario1)getWorld()).punto.getValue()==1060)
+       {
+          jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
+           Greenfoot.setWorld(new Fin(0));
         ((Escenario1)getWorld()).stop();
        }
        

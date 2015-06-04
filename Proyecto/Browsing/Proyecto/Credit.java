@@ -25,4 +25,3 @@ public class Credit extends World
         addObject(mainmenu, 102, 564);
     }
 }
-

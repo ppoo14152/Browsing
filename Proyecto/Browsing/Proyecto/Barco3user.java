@@ -127,6 +127,13 @@ public class Barco3user extends Movimientos
       Greenfoot.setWorld(new Fin(1));
       ((Escenario3)getWorld()).stop();
       }
+       else
+       if(((Escenario3)getWorld()).punto.getValue()==2210)
+       {
+          jugador.saveHighscore(((Escenario3)getWorld()).punto.getValue());
+           Greenfoot.setWorld(new Fin(0));
+        ((Escenario3)getWorld()).stop();
+       }
     }
     
      public void MuestraVida()

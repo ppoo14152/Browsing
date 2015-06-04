@@ -25,7 +25,6 @@ public class Enemigo1 extends Movimientos
         // Add your action code here.
         disparo();
         MuestraVidaEne();
-        vidaFin();  
         if(isTouching(Barco1user.class))
          {
             Fuego fuego = new Fuego();
@@ -53,26 +52,8 @@ public class Enemigo1 extends Movimientos
         {
          q=0;
         }   
-    }
-      
-     public int getVidaE()
-    {
-        return vidaE;
-    }
-    
-    public void vidaFin()
-    {
-      World miMundo = getWorld();
-      Escenario1 escenario1 = (Escenario1)miMundo;
-      VidaEnemigoF barraEne=escenario1.getbarraEne();
-      if(getVidaE() == 0)
-         {
-         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
-         //removeTouching(Enemigo1.class);
-         Greenfoot.setWorld(new Fin(0));
-         ((Escenario1)getWorld()).stop();
-        }
-    }
+    } 
+       
      public void MuestraVidaEne()
     {
         vidEne.despliegaTex("",30);

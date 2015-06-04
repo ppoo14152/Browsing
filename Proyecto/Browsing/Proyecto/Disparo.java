@@ -31,8 +31,7 @@ public class Disparo extends Movimientos
       getWorld().removeObject(this);
     }
       else
-     
-      if(isTouching(EnemCriatura.class))
+    if(isTouching(EnemCriatura.class))
       {
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY()); 
@@ -50,10 +49,9 @@ public class Disparo extends Movimientos
        ((Escenario1)getWorld()).aumentaPuntos(10);
        Greenfoot.playSound("blast.wav");
        getWorld().removeObject(this);
-       //Fuego fuego = new Fuego();
-       //getWorld().addObject(fuego, getX(), getY());
+       
       }
-     
+    
   }   
   
   public int getVidaE()
