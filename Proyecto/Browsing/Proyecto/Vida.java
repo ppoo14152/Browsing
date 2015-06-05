@@ -2,7 +2,8 @@ import greenfoot.*;
 import java.awt.Color;
 import java.awt.Graphics;
 /**
- * Write a description of class Vida here.
+ * clase para la vida del jugador 
+ * la cual es de color verde
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -24,11 +25,17 @@ public class Vida extends Actor
         actualiza();
     }
     
+    /**
+     *constructor para la vida 
+     */
     public Vida()
     {
         actualiza();
     }
     
+    /**
+     *metodo para actualizar la vida del jugador conforme lo dañen 
+     */
     public void actualiza()
     {
         setImage(new GreenfootImage(VidaBarraAn + 1,VidaBarraAl + 1));
@@ -40,6 +47,9 @@ public class Vida extends Actor
         
     }
     
+    /**
+     *metodo para  restarle la vida a el jugador
+     */
     public void detectaPresen()
     {
         vida--;

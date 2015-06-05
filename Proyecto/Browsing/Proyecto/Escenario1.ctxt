@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
+comment0.text=\r\n\ Metodo\ para\ actuar\ de\ el\ escenario\ 1\r\n
 comment1.params=
 comment1.target=Escenario1()
-comment1.text=\r\n\ Constructor\ del\ escenario1\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ del\ escenario1\r\n
 comment10.params=cant
 comment10.target=void\ aumentaPuntos(int)
 comment10.text=\r\n\ this\ method\ is\ for\ the\ increase\ points\r\n
@@ -18,10 +19,10 @@ comment13.target=void\ setVScroll(int)
 comment13.text=\r\n\ para\ incrementr\ la\ suma\ a\ la\ velocidad\ de\ vScroll.\r\n
 comment2.params=
 comment2.target=Vida\ getvidaBarra()
-comment2.text=\r\n\ this\ method\ is\ for\ the\ life\ of\ user\r\n
+comment2.text=\r\n\ metodo\ para\ ir\ checando\ la\ vida\ del\ jugador\r\n
 comment3.params=
 comment3.target=VidaEnemigoF\ getbarraEne()
-comment3.text=\r\n\ this\ method\ is\ for\ the\ life\ of\ enemy\r\n
+comment3.text=\r\n\ metodo\ para\ ir\ checando\ la\ vida\ del\ enemigo\r\n
 comment4.params=
 comment4.target=void\ play()
 comment4.text=\r\n\ Metodo\ para\ poder\ activar\ la\ musica\ del\ juego\r\n

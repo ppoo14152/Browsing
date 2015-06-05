@@ -1,13 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Creditos here.
+ * clase para entra a ver los creditos del juego
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 22 de abril del 2015
  * 
- * clase para entra a ver los creditos del juego
  */
 public class Creditos extends Botones
 {

@@ -1,7 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class DisparoCria1 here.
+ * clase del disparo de la criatura 1 el cual esta
+ * ligado a ella
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
@@ -9,8 +10,7 @@ import greenfoot.*;
  */
 public class DisparoCri extends Movimientos
 {
-    private int rand;
-    /**
+     /**
      * Act - do whatever the DisparoCria1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */

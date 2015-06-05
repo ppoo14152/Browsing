@@ -1,15 +1,16 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Disparo3 here.
+ * Clase para el disparo del barco 3 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Disparo3 extends Movimientos
 {
     private Save jugador=new Save();
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     
     /**

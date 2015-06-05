@@ -2,8 +2,6 @@ import greenfoot.*;
 import java.awt.Color;
 import java.awt.Graphics;
 /**
- * Write a description of class VidaEnemigoF here.
- * 
  * clase para representar la vida del enemigo final
  * 
  * @author zarazua lopez vicente
@@ -26,11 +24,18 @@ public class VidaEnemigoF extends Actor
          actualizaE();
     }
     
+    /**
+     *metodo para llamar la actualizacion de la vida  
+     */
     public VidaEnemigoF()
     {
       actualizaE();
     }
     
+    /**
+     *Metodo para que se actualize la barra de vida del enemigo el cual
+     *con el daño que se le haga puede ir cambiado
+     */
     public void actualizaE()
     {
         setImage(new GreenfootImage(VidaBarraAn + 1,VidaBarraAl + 1));
@@ -41,6 +46,10 @@ public class VidaEnemigoF extends Actor
         miImagen.fillRect(1, 1,vidaEne*pixelesBarra,VidaBarraAl);
         
     }
+    
+    /**
+     *Metodo para que cuando se le haga daño le reste vida 
+     */
     public void detectaPresencia()
     {
         vidaEne--;

@@ -1,7 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Botones here.
+ * clase para tener los diferentes tipos de botones
+ * que se utilizaran
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain

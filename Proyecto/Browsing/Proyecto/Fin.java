@@ -1,17 +1,17 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Fin here.
+ * clase para mostrar el tipo de fin ya sea gano o perdio
  * 
-  * @author zarazua lopez vicente
+ * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 26 de mayo del 2015
  */
 public class Fin extends World
 {
     private GreenfootSound s;
-        /**
-     * Constructor for objects of class Fin.
+     /**
+     * Constructor para la clase Fin.
      * 
      */
     public Fin(int sel)
@@ -36,7 +36,10 @@ public class Fin extends World
         
     }
     
-       public void act()
+     /**
+      * metodo para actuar de la clase fin
+      */  
+     public void act()
     {
         if(Greenfoot.getMouseInfo()!=null)
         {

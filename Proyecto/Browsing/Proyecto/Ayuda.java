@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ayuda here.
+ * clase del boton ayuda para poder desplegar la informacion 
+ * que nos sera de utilidad en el juego
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Ayuda extends Botones
 {

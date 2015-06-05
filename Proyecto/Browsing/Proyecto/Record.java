@@ -1,7 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Record here.
+ * Metodo para crear el boton de los record 
+ * ademas de los jugadores que estan en su limite
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -11,7 +12,6 @@ public class Record extends World
 {
     private GreenfootSound s;
     private ScoreBoard t;
-
     /**
      * Constructor for objects of class Record.
      * 

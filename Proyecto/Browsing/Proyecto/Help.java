@@ -1,7 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Help here.
+ * clase para poder entrar a conocer la ayuda que nos servirar para saber 
+ * como movernos en el escenario
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -11,7 +12,7 @@ public class Help extends World
 {
 
     /**
-     * Constructor for objects of class Help.
+     * Constructor para de la clase Help 
      * 
      */
     public Help()

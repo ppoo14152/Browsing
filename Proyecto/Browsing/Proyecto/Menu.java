@@ -1,22 +1,20 @@
 import greenfoot.*;
 import java.awt.*;
 /**
- * Write a description of class Menu here.
+ * clase Menu para ver la opcion de creditos, empezar
+ * records y ayuda.
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 23 de abril del 2015
  * @version fecha de modificacion 27 de abril del 2015
  * 
- * clase para ver la opcion de creditos y la de empezar
  */
 
 public class Menu extends World
 {
-    private int i = 825;
-
     /**
-     * Constructor for objects of class Menu.
+     * Constructor para la clase Menu.
      * 
      */
     public Menu()
@@ -46,6 +44,9 @@ public class Menu extends World
       bgMusic.stop();
     }
     */
+    /**
+     * Metodo para añadir los botones para el juego
+     */
     private void prepare()
     {
         addObject(new Start(), 650,300);

@@ -1,13 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Start here.
+ *clase del boton star para poder entra a el menu de dificultades
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain 
  * @version 23 de abril del 2015
  * 
- * clase para poer regresar a el menu principal 
  */
 public class Start extends Botones
 {

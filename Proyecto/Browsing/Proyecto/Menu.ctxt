@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Menu()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n
+comment0.text=\r\n\ Constructor\ para\ la\ clase\ Menu.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ prepare()
-comment1.text=\ \ \ \r\n\ \ \ \ public\ void\ play()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ bgMusic.play();\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ void\ loop()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ bgMusic.playLoop();\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ void\ stop()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ bgMusic.stop();\r\n\ \ \ \ }\r\n
+comment1.text=\r\n\ Metodo\ para\ a\u00F1adir\ los\ botones\ para\ el\ juego\r\n
 numComments=2

@@ -4,22 +4,22 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.image.*;
 /**
- * Write a description of class Escenario2 here.
+ * clase para  Escenario2 el cual es para jugar el nivel 2 del juego.
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar  
  * @version 27 de abril del 2015
  * 
- * clase para la dificultad media
+ * 
  */
 public class Escenario2 extends World
 {
-    int timeSpawn = 0;
+    private int timeSpawn = 0;
     Counter punto = new Counter("Puntos : ");
-    GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+    private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
     private ImgScroll scroll;
     private int vScroll;
-    Vida vidaBarra = new Vida();
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private Vida vidaBarra = new Vida();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
   
     /**
      * Constructor for objects of class Escenario2.
@@ -36,18 +36,28 @@ public class Escenario2 extends World
         prepare1();
         play();
         loop();
+        
     }
     
+    /**
+     * Metodo para ir verificando la vida del jugador
+     */
     public Vida getvidaBarra()
     {
         return vidaBarra;
     }
     
+    /**
+     * Metodo para ir checando la vida del enemigo
+     */
     public VidaEnemigoF getbarraEne()
     {
         return barraEne;
     }
     
+    /**
+     * Metodo en el cual se ejecutan los metodos para el nivel 2
+     */
     public void act()
     {
       timeSpawn++;
@@ -56,13 +66,20 @@ public class Escenario2 extends World
           }
         
       scrollWorld();
+      Counter punto = new Counter("Puntos : ");
     }
     
+    /**
+     *Metodo para iniciar el sonido del juego 
+     */
     public void play()
     {
         bgMusic.play();
     }
     
+    /**
+     * metodo para detener la musica del juego 
+     */
     public void stop()
     {
         bgMusic.stop();
@@ -86,10 +103,7 @@ public class Escenario2 extends World
       setPaintOrder(VidaEnemigoF.class);
       getBackground().scale(1000,600);
       addObject(barraEne,280,25);
-      
       addObject(punto, 500, 27);
-      
-      
       Barco2user bar2 = new Barco2user();
       addObject(bar2,800,500);
         //bar2.setLocation(293,366);
@@ -97,6 +111,9 @@ public class Escenario2 extends World
       vScroll = 0;
     }
     
+    /**
+     * metodo para crear las crituras y ponerlas en el escenario
+     */
     public void prepare1()
     {
       EnemCriatura2 enecri = new EnemCriatura2();
@@ -106,13 +123,16 @@ public class Escenario2 extends World
       
     }
     
-    public void creaEne2()
+    /**
+     * Metodo para crear a el enemigo final 
+     */public void creaEne2()
     {
      Enemigo2 ene2 = new Enemigo2();
      addObject(ene2,100,440);   
     }
+    
     /**
-     * 
+     *Metodo para ir sumando los puntos del enemigo 
      */
     public void aumentaPuntos(int cant)
     {

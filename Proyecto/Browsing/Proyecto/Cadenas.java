@@ -1,7 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Cadenas here.
+ *clase para desplegar texto en el escenario
+ *con el texto que se dese poner
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -21,11 +22,18 @@ public class Cadenas extends Actor
         // Add your action code here.
     }    
     
+    /**
+     *constructor de la clase cadena 
+     */
     public Cadenas(String cad)
     {
         cadena1 = cad;
     }
     
+     /**
+      *metodo para desplegar el texto que se dese, con color y tamaño
+      *especifico
+      */
      public void despliegaTex(String cadena,int tam)
     {
         super.setImage(new GreenfootImage(cadena1+cadena,tam,java.awt.Color.RED,null));

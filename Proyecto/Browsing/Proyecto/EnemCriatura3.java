@@ -1,19 +1,17 @@
 import greenfoot.*;
 
 /**
- * Write a description of class EnemCriatura3 here.
+ * clase para la criatura en el nivel dificil 
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 29 de abril del 2015
- * 
- * clase para la criatura en el nivel dificil 
+ *
  */
 public class EnemCriatura3 extends Movimientos
 {
-    private int q=0;
-    private int rand;
-    /**
+    private int disparo=0;
+        /**
      * Act - do whatever the EnemCriatura3 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -37,25 +35,22 @@ public class EnemCriatura3 extends Movimientos
         }
     }
     
-    public EnemCriatura3()
-    {
-    }
-    
+    /**
+     *Metodo para el disparo de la cratura 3 
+     */
     public void disparar()
     {
-        //DisparoCri dc1 = new DisparoCri ();
-         //getWorld().addObject(dc1,getX(),getY());
-         q++;
-         if(q==1)
+         disparo++;
+         if(disparo==1)
         {
          
          Llamas lla = new Llamas ();
          getWorld().addObject(lla,getX(),getY());
          lla.setRotation(getRotation());
         }
-        if(q==50)
+        if(disparo==50)
         {
-         q=0;
+         disparo=0;
         }
         
     }

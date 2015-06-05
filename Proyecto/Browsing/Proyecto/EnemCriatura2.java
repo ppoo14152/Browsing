@@ -1,18 +1,19 @@
 import greenfoot.*;
 
 /**
- * Write a description of class EnemCriatura2 here.
+ * Clase para el disparo del enemigo 3 
  * 
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015) 
  * @author zarazua lopez vicente
  * @author zarazua lopez vicente
  * @version 29 de abril del 2015
  * 
- * clase para la criatura la cual aparecera en el nivel medio
  */
 public class EnemCriatura2 extends Movimientos
 {
-    private int q=0;
-    private int rand;
+    private int disparo=0;
     /**
      * Act - do whatever the EnemCriatura2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -40,23 +41,23 @@ public class EnemCriatura2 extends Movimientos
       }
     }
     
-    public EnemCriatura2()
-    {
-    }
-    
+   
+    /**
+     *Metodo para el disparo de la criatura 2 
+     */
     public void disparar()
     {
-         q++;
-         if(q==1)
+         disparo++;
+         if(disparo==1)
         {
          
          Rocas rc = new Rocas();
          getWorld().addObject(rc,getX(),getY());
          rc.setRotation(getRotation());
         }
-        if(q==50)
+        if(disparo==50)
         {
-         q=0;
+         disparo=0;
         }
         
     }

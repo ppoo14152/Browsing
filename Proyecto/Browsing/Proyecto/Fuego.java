@@ -1,13 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Fuego here.
+ * clase para hacer la simulacion de esplocion
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version  21 de abril del 2015
  * 
- * clase para hacer la simulacion de esplocion
  */
 public class Fuego extends Movimientos
 {

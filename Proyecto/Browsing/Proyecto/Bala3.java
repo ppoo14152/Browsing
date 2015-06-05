@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bala3 here.
+ * Clase de la bala3 la cual sera utilizada por el 
+ * enemigo final 3
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Bala3 extends Movimientos
 {

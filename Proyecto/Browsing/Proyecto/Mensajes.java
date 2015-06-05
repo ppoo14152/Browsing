@@ -1,8 +1,8 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class Mensajes here.
- * 
+ * Clase para desplegar el texto para el
+ * enemigo y el jugador
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 22 de mayo del 2015
@@ -18,6 +18,10 @@ public class Mensajes extends Actor
     {
         // Add your action code here.
     }    
+    
+    /**
+     *Costructor de la clase Mensaje 
+     */
     public Mensajes(int sel)
     {
         imagenes = new ArrayList();

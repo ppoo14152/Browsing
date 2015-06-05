@@ -1,20 +1,19 @@
-import greenfoot.*;
+import greenfoot.*; 
 
 /**
- * Write a description of class Enemigo1 here.
+ * clase para el enemigo 1 que saldra para terminar el nivel 1
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 28 de abril del 2015
  * 
- * clase para el enemigo 1 que saldra para terminar el nivel 1
  */
 public class Enemigo1 extends Movimientos
 {
-    private int q=0;
+    private int disparo=0;
     private Cadenas vidEne;
     private Save jugador=new Save();
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     /**
      * Act - do whatever the Enemigo1 wants to do. This method is called whenever
@@ -33,27 +32,36 @@ public class Enemigo1 extends Movimientos
         
     }
     
+    /**
+     *Constructor del enemigo1 
+     */
     public Enemigo1()
     {
         vidEne = new Cadenas("Enemigo ");
      }
     
+    /**
+     *Metodo para el disparo para el enemigo final 1 
+     */
     public void disparo()
     {
-        q++;
-         if(q==1)
+        disparo++;
+         if(disparo==1)
         {
          
          Bala1 b1 = new Bala1();
          getWorld().addObject(b1,getX(),getY());
          b1.setRotation(getRotation());
         }
-        if(q==50)
+        if(disparo==50)
         {
-         q=0;
+         disparo=0;
         }   
     } 
        
+     /**
+      *Metodo que despliega el texto "Enemigo" 
+      */
      public void MuestraVidaEne()
     {
         vidEne.despliegaTex("",30);

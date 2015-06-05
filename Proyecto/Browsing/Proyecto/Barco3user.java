@@ -1,24 +1,22 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Barco3user here.
+ * clase para el barco del usuario en el nivel 3
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 28 de abril del 2015
  * 
- * clase para el barco del usuario en el nivel 3
  */
 public class Barco3user extends Movimientos
 {
-    private int count=0;
     private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
     private Save jugador=new Save();
-    Vida vidaBarra = new Vida();
+    private Vida vidaBarra = new Vida();
     private int vida = 300;
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever
@@ -27,14 +25,6 @@ public class Barco3user extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        //if(count==0)
-        //{
-          //  setRotation(0);
-        //}
-        //if(count <= 2)
-        //{
-          //  count++;
-        //}
         movimientos();
         MuestraVida();
         MuestraVidaEne();
@@ -42,13 +32,19 @@ public class Barco3user extends Movimientos
         danio();
     }
     
-      public Barco3user()
+     /**
+      *constructor del barco 3 del usuario  
+      */
+     public Barco3user()
     {
      vid = new Cadenas("Vida ");
      vidEne = new Cadenas("Enemigo ");
        
     }
     
+    /**
+     *Metodo para hacer que el barco del usuario se mueva 
+     */
     private void movimientos()
     {
         //mueve a el barco para la derecha
@@ -70,10 +66,13 @@ public class Barco3user extends Movimientos
         }
         }
         
+    /**
+     *metodo de disparar utilizando la barra espaciadora 
+     */
     private void disparar()
     {
-        if(("space").equals(Greenfoot.getKey()))
-        //if (Greenfoot.isKeyDown("space"))//&& System.currentTimeMillis()>lastShot+300)
+        //if(("space").equals(Greenfoot.getKey()))
+        if (Greenfoot.isKeyDown("space"))//&& System.currentTimeMillis()>lastShot+300)
         {
            Disparo3 di = new Disparo3();
           
@@ -85,16 +84,26 @@ public class Barco3user extends Movimientos
         }
     }
     
+     /**
+      *Metodo para regresar la vida del jugador 
+      */
      public int getVida()
     {
         return vida;
     }
     
-     public int getVidaE()
+    /**
+     *Metodo para regresar la vida del enemigo  
+     */
+    public int getVidaE()
     {
         return vidaE;
     }
     
+     /**
+      *Metodo para poder hacer que el barco relize sus acciones 
+      *ademas de verificar el daño que recive
+      */
      public void danio()
     {
      World miMundo = getWorld();
@@ -139,13 +148,19 @@ public class Barco3user extends Movimientos
        }
     }
     
-     public void MuestraVida()
+    /**
+     *Despliega el en el escenario el texto "vida" 
+     */
+    public void MuestraVida()
     {
         vid.despliegaTex("",30);
         getWorld().addObject(vid,645,25);
     }
 
-     public void MuestraVidaEne()
+    /**
+     *Despliega el en el escenario el texto "Enemigo" 
+     */
+    public void MuestraVidaEne()
     {
         vidEne.despliegaTex("",30);
         getWorld().addObject(vidEne,75,25);

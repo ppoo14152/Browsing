@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Disparo here.
+ * Clase del disparo para el jugador 1 
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -11,9 +11,8 @@ import greenfoot.*;
 public class Disparo extends Movimientos
 {
     private Save jugador=new Save();
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
-    
     /**
      * Act - do whatever the Disparo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,11 +20,10 @@ public class Disparo extends Movimientos
   public void act() 
   {
         // Add your action code here.
-        
-      World miMundo = getWorld();
-      Escenario1 escenario1 = (Escenario1)miMundo;
-      VidaEnemigoF barraEne=escenario1.getbarraEne(); 
-        move(-6); 
+    World miMundo = getWorld();
+    Escenario1 escenario1 = (Escenario1)miMundo;
+    VidaEnemigoF barraEne=escenario1.getbarraEne(); 
+     move(-6); 
      if(isAtEdge())
      {
       getWorld().removeObject(this);
@@ -54,6 +52,9 @@ public class Disparo extends Movimientos
     
   }   
   
+  /**
+   * Metodo para regresar la vida del enemigo
+   */
   public int getVidaE()
   {
     return vidaE;

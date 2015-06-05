@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 import java.util.*;
 import java.awt.*;
@@ -6,7 +5,8 @@ import javax.swing.*;
 import java.awt.image.*;
 
 /**
- * Write a description of class Escenario1 here.
+ * clase Escenario1 es donde se desarrolla el juego para el primer nivel 
+ * el cual consta de diferentes acciones
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
@@ -18,27 +18,25 @@ public class Escenario1 extends World
 {
    private int timeSpawn = 0;
    Counter punto = new Counter("Puntos : ");
-   GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+   private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
    private ImgScroll scroll;
    private int vScroll;
-   Vida vidaBarra = new Vida();
-   VidaEnemigoF barraEne = new VidaEnemigoF();
-    
-    public void act()
+   private Vida vidaBarra = new Vida();
+   private VidaEnemigoF barraEne = new VidaEnemigoF();
+   /**
+    * Metodo para actuar de el escenario 1
+    */public void act()
     {
         timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
         }
-        
-        //if(vScroll != 0)
-           scrollWorld();
-        
+        scrollWorld();
+        Counter punto = new Counter("Puntos : ");
     }
     
-    /**
+   /**
      * Constructor del escenario1
-     * 
      */
     public Escenario1()
     {    
@@ -55,18 +53,19 @@ public class Escenario1 extends World
     }
     
     /**
-     * this method is for the life of user
+     * metodo para ir checando la vida del jugador
      */public Vida getvidaBarra()
     {
         return vidaBarra;
     }
     
     /**
-     * this method is for the life of enemy
+     * metodo para ir checando la vida del enemigo
      */public VidaEnemigoF getbarraEne()
     {
         return barraEne;
     }
+    
     /**
      * Metodo para poder activar la musica del juego
      */

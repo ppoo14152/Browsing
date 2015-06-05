@@ -1,6 +1,7 @@
 import greenfoot.*;
 /**
- * Write a description of class barco1 here.
+ * Clase del Barco1user en el cual sera el usuario el que lo manipulara
+ * el cual con sus acciones se llevaraacabo el juego
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar
@@ -9,12 +10,11 @@ import greenfoot.*;
  */
  public class Barco1user extends Movimientos
  {
-  private int q=0;
   private Cadenas vid;
   private Save jugador=new Save();
-  Vida vidaBarra = new Vida();
+  private Vida vidaBarra = new Vida();
   private int vida = 300;
-  VidaEnemigoF barraEne = new VidaEnemigoF();
+  private VidaEnemigoF barraEne = new VidaEnemigoF();
   private int vidaE = 100;
   /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
@@ -28,14 +28,19 @@ import greenfoot.*;
     }
    
     
-    public Barco1user()
+  /**
+   * Constructor del Barco1user
+   */
+  public Barco1user()
     {
      vid = new Cadenas("Vida ");
      //vidEne = new Cadenas("Enemigo ");
       
     }
     
-    public void Movimientos()
+  /**
+   * Metodo para activar los movimientos del barco
+   */public void Movimientos()
     {
      //mueve a el barco para la derecha
         if(Greenfoot.isKeyDown("right")){
@@ -56,7 +61,10 @@ import greenfoot.*;
          
     }
     
-    public void Disparar()
+  /**
+   *Metodo para poder disparar  
+   */
+  public void Disparar()
     {
         if(("space").equals(Greenfoot.getKey()))
          {
@@ -71,17 +79,25 @@ import greenfoot.*;
     
     }
   
-     public int getVida()
+  /**
+   *Metodo para regresar la vida del jugador 
+   */
+  public int getVida()
     {
         return vida;
     }
-    
-     public int getVidaE()
+ 
+  /**
+   * Metodo para regresar la vida del enemigo
+   */public int getVidaE()
     {
         return vidaE;
     }
     
-    public void danio()
+  /**
+   * Metodo para ver lo que le pasan a el barco1user
+   */
+  public void danio()
      {
        World miMundo = getWorld();
        Escenario1 escenario = (Escenario1)miMundo;
@@ -145,6 +161,9 @@ import greenfoot.*;
         }  
     }
    
+   /**
+    *Metodo que muestra el nombre del jugador  
+    */
    public void MuestraVida()
     {
         vid.despliegaTex("",30);

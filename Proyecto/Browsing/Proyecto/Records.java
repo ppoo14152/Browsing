@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Records here.
+ * clase para el boton de los records el cual nos guardar los 
+ * jugadores que han podido entrar en la lista
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Records extends Botones
 {

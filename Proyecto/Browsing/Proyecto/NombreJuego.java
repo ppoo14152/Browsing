@@ -1,13 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class NombreJuego here.
+ * clase para poner el nombre del juego en la portada 
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
  * @version 29 de abril del 2015
  * 
- * clase para poner el nombre del juego en la portada
  */
 public class NombreJuego extends Botones
 {

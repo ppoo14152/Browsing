@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Enemigo2 here.
+ * Clase del enemigo final 2 que aparecera en el nivel medio
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain
@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class Enemigo2 extends Movimientos
 {
-     private int q=0;
+     private int bala=0;
     /**
      * Act - do whatever the Enemigo2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,19 +26,22 @@ public class Enemigo2 extends Movimientos
         }
     }    
     
+    /**
+     *Metodo para disparar de el enemigo 2 que esta en el nivel 2  
+     */
     public void disparo()
     {
-        q++;
-         if(q==1)
+        bala++;
+         if(bala==1)
         {
          
          Bala2 b2 = new Bala2();
          getWorld().addObject(b2,getX(),getY());
          b2.setRotation(getRotation());
         }
-        if(q==50)
+        if(bala==50)
         {
-         q=0;
+         bala=0;
         }   
     }
 }

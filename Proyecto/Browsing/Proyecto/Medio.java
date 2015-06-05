@@ -1,14 +1,13 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Medio here.
+ * clase para entrar al seguno escenario
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 27 de abril del 2015
  * @version ultima modificacion 28 de abril del 2015
  * 
- * clase para entrar al seguno escenario
  */
 public class Medio extends Botones
 {

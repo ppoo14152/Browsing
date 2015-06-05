@@ -5,25 +5,25 @@ import javax.swing.*;
 import java.awt.image.*;
 
 /**
- * Write a description of class Escenario3 here.
+ *clase para la dificultad dificil, el  Escenario3 es el ultimo nivel del juego en el cual 
+ *sera diferente al los demas
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 27 de abril del 2015
  * @version ultima modificacion 28 de abril del 2015
  * 
- * clase para la dificultad dificil
  */
 public class Escenario3 extends World
 {
-    int timeSpawn = 0;
+    private int timeSpawn = 0;
     Counter punto = new Counter("Puntos : ");
-    GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+    private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
     private int vScroll;
     private ImgScroll scroll;
-    Vida vidaBarra = new Vida();
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private Vida vidaBarra = new Vida();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     /**
-     * Constructor for objects of class Escenario3.
+     * Constructor para el  Escenario3.
      * 
      */
     public Escenario3()
@@ -40,25 +40,38 @@ public class Escenario3 extends World
         
     }
     
+    /**
+     *Metodo de actuar de el escenario3 
+     */
     public void act()
     {
         timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
-        }
+        }   
        scrollWorld();
+   
     }
     
+    /**
+     *Metodo para iniciar la musica 
+     */
     public void play()
     {
         bgMusic.play();
     }
     
+    /**
+     *Metodo para detener la musica 
+     */
     public void stop()
     {
         bgMusic.stop();
     }
     
+    /**
+     *Metodo para repetir la musica varias veces(ciclo) 
+     */
     public void loop()
     {
         bgMusic.playLoop();
@@ -83,10 +96,12 @@ public class Escenario3 extends World
       
       Barco3user bar3 = new Barco3user();
       addObject(bar3,800,500);
-        //bar2.setLocation(293,366);
        vScroll = 0;
     }
     
+    /**
+     * Metodo para crea a las criaturas, ademas de añadirlas a el escenario
+     */
     public void prepare1()
      {
       EnemCriatura3 enecri = new EnemCriatura3();
@@ -96,24 +111,34 @@ public class Escenario3 extends World
       
      }
     
+    /**
+     *Metodo para crear a el enemigo final de el nivel 3
+     */
     public void creaEne3()
     {
       Enemigo3 ene3 = new Enemigo3();
       addObject(ene3,100,440);
      }
      
-      public Vida getvidaBarra()
+     /**
+      * Metodo para ir verificando la vida del jugador
+      */ 
+     public Vida getvidaBarra()
     {
         return vidaBarra;
     }
     
+    /**
+     *Metodo para ir verificando la vida del enemigo 
+     */
     public VidaEnemigoF getbarraEne()
     {
         return barraEne;
     }
     
     /**
-     * 
+     * Metodo para acumular los puntos segun la 
+     * cantidad dada
      */
     public void aumentaPuntos(int cant)
     {

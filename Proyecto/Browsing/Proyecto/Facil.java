@@ -1,6 +1,6 @@
 import greenfoot.*;
 /**
- * Write a description of class Facil here.
+ * clase para el boton facil
  * 
  * @author zarazua lopez vicente
  * @author jacobo tovar efrain

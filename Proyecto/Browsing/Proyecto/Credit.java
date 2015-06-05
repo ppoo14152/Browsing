@@ -1,20 +1,19 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Credit here.
+ * clase para mostrar los creditos del juego, ademas mostrando el
+ * el boton para regresa a el nivle 2
  * 
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 17 de abril del 2015
  * @version ultima modificacion 21 de abril del 2015
- * 
- * clase para mostrar los creditos del juego
  */
 public class Credit extends World
 {
 
     /**
-     * Constructor for objects of class Credit.
+     * Constructor para la clase Credit.
      * 
      */
     public Credit()

@@ -1,14 +1,13 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Dificil here.
- * 
+ * clase para entrar a el escenario 3 que es el mas dificil 
+ *
  * @author zarazua lopez vicente
  * @author Efraín Jacobo Tovar 
  * @version 13 de abril del 2015
  * @version ultima modificacion 21 de abril del 2015
  * 
- * clase para entrar a el escenario 3 que es el mas dificil
  */
 public class Dificil extends Botones
 {

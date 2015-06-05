@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Llamas here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase Llamas la cual sera utilizada por el dragon 
+ * que aparece en el nivel 3
+ *
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Llamas extends Movimientos
 {

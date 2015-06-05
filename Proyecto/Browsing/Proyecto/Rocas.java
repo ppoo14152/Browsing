@@ -1,10 +1,12 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Rocas here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase Rocas la cual sera utilizada por la criatura
+ * que aparece en el nivel 2
+ *
+ * @author (jacobo tovar efrain)
+ * @author (zarazua lopez vicente)
+ * @version (mayo del 2015)
  */
 public class Rocas extends Movimientos
 {

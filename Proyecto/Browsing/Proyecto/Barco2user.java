@@ -1,24 +1,22 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Barco2user here.
- * 
+ * clase para el jugador en el nivel medio el cual realizara
+ * diferentes acciones al el barco 1
  * @author zarazua lopez vicente
  * @author jacobotovar efrain
  * @version 28 de abril del 2015
  * 
- * clase para el jugador en el nivel medio
  */
 public class Barco2user extends Movimientos
 {
-    private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
     private Cadenas pun;
     private Save jugador=new Save();
     private Counter score;
     private int vida = 300;
-    VidaEnemigoF barraEne = new VidaEnemigoF();
+    private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     /**
      * Act - do whatever the Barco2user wants to do. This method is called whenever
@@ -35,6 +33,9 @@ public class Barco2user extends Movimientos
         
     }    
     
+    /** 
+     *Metodo para poder mover el barco en diferentes direcciones 
+     */
     public void Movimientos()
     {
          //mueve a el barco para la derecha
@@ -56,6 +57,9 @@ public class Barco2user extends Movimientos
         Disparar();
     }
     
+    /**
+     * Metodo para que el barco 2 dispare
+     */
     public void Disparar()
     {
         if(("space").equals(Greenfoot.getKey()))
@@ -70,29 +74,45 @@ public class Barco2user extends Movimientos
         }
     }
     
+    /**
+     * constructor del barco2user 
+     */
     public Barco2user()
     {
      vid = new Cadenas("Vida ");
      vidEne = new Cadenas("Enemigo ");
     }
     
-      public int getVida()
+    /**
+     *metodo para regresar la vida del jugador 
+     */  
+    public int getVida()
     {
         return vida;
     }
     
+    /**
+     * metodo para mostrar en el escenario el texto "vida"
+     */
     public void MuestraVida()
     {
         vid.despliegaTex("",30);
         getWorld().addObject(vid,645,25);
     }
 
-     public void MuestraVidaEne()
+    /**
+     *Metodo para desplegar en el escenario el texto "Enemigo" 
+     */
+    public void MuestraVidaEne()
     {
         vidEne.despliegaTex("",30);
         getWorld().addObject(vidEne,75,25);
     }
          
+    /**
+     *Metodo para ver el daño que le pasara a el jugador 
+     *ademas de lo que sucedera si gana o pierde
+     */
     public void danio()
     {
      World miMundo = getWorld();
