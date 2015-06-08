@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.*;
 /**
  * clase en la que los movimientos se podran hacer, ademas de las cordenadas
  * @author zarazua lopez vicente
@@ -11,6 +11,13 @@ public class Movimientos extends Actor
    private int damage;
    private double exactX;
    private double exactY;
+   
+    Random rand = new Random();
+    private static final int vel = 1;
+    enum Direccion{DU,DD,IU,ID};
+    Direccion dir;
+    SimpleTimer timer;
+    private int cantidad;
     /**
      * Metodo para el movimiento de el jugador y anemigos
      */public void move(int distance)

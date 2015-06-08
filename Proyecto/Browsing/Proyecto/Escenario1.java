@@ -17,6 +17,7 @@ import java.awt.image.*;
 public class Escenario1 extends World
 {
    private int timeSpawn = 0;
+   private Barco1user bar1;
    Counter punto = new Counter("Puntos : ");
    private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
    private ImgScroll scroll;
@@ -104,7 +105,8 @@ public class Escenario1 extends World
       addObject(barraEne,280,25);
       
       addObject(punto, 500, 27);
-    
+      Meteoro me = new Meteoro(); 
+      addObject(me,300,0);
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
     
@@ -156,6 +158,10 @@ public class Escenario1 extends World
         return vScroll;
     }
     
+   public Barco1user getBarco1user()
+   {
+       return bar1;
+    }
 
     /**
      * para incrementr la suma a la velocidad de vScroll.
