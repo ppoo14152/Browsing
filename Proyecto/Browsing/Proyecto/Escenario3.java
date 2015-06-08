@@ -98,6 +98,7 @@ public class Escenario3 extends World
       addObject(bar3,800,500);
        vScroll = 0;
         Gas();
+       crearMeteoro3(6);
     }
     
      /**
@@ -112,6 +113,20 @@ public class Escenario3 extends World
    
     }
     
+        /**
+     * Metodo para crear mas obstaculos para el juego
+     * que se moveran por el escenario
+     */ 
+    public void crearMeteoro3(int numero)
+    {
+    for(int i=0;i<numero;i++)
+    {
+    Meteoro3 me3 = new Meteoro3(); 
+    int x=Greenfoot.getRandomNumber(getWidth());
+    int y=Greenfoot.getRandomNumber(getWidth());
+    addObject(me3,x,y);
+    }
+    }
     
     /**
      * Metodo para crea a las criaturas, ademas de añadirlas a el escenario

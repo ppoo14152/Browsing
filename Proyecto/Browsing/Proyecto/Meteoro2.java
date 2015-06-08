@@ -10,17 +10,15 @@ import java.awt.image.*;
  * @author (zarazua lopez vicente)
  * @version (junio del 2015)
  */
-public class Meteoro extends Movimientos
+public class Meteoro2 extends Movimientos
 {
-  private Vida vidaBarra = new Vida();
-  private int vida = 300;
-  
+     private int vida = 300;
     public void act()
     {
-       World m=getWorld();
-     Escenario1 escenario1 = (Escenario1)m;
-     Vida vidaBarra = escenario1.getvidaBarra();
-           if(getX()<getWorld().getWidth())
+      World m=getWorld();
+     Escenario2 escenario2 = (Escenario2)m;
+     Vida vidaBarra = escenario2.getvidaBarra();
+       if(getX()<getWorld().getWidth())
         {
          move(2);
          
@@ -43,7 +41,7 @@ public class Meteoro extends Movimientos
         }
     }
          
-        if(isTouching(Barco1user.class))
+        if(isTouching(Barco2user.class))
       {
         vida-=20;
         vidaBarra.detectaPresen();
@@ -52,7 +50,7 @@ public class Meteoro extends Movimientos
        getWorld().removeObject(this);
       }
       else
-       if(isTouching(Disparo.class))
+       if(isTouching(Disparo2.class))
          {
             Fuego fuego = new Fuego();
             getWorld().addObject(fuego, getX(), getY()); 
@@ -62,6 +60,6 @@ public class Meteoro extends Movimientos
     
    }
     
-   
- }    
-   
+    
+ }
+    

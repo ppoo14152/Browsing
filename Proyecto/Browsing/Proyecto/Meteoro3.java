@@ -10,40 +10,42 @@ import java.awt.image.*;
  * @author (zarazua lopez vicente)
  * @version (junio del 2015)
  */
-public class Meteoro extends Movimientos
+public class Meteoro3 extends Movimientos
 {
-  private Vida vidaBarra = new Vida();
-  private int vida = 300;
-  
+    
+   private int vida = 300;
     public void act()
     {
        World m=getWorld();
-     Escenario1 escenario1 = (Escenario1)m;
-     Vida vidaBarra = escenario1.getvidaBarra();
-           if(getX()<getWorld().getWidth())
+     Escenario3 escenario3 = (Escenario3)m;
+     Vida vidaBarra = escenario3.getvidaBarra();
+         if(getX()<getWorld().getWidth())
         {
          move(2);
          
-        if(getX()>=m.getWidth()-5||getX()<=5)
-        {
+        }
+         else
+         if(getX()>=m.getWidth()-5||getX()<=5)
+         {
          turn(180);
+        }
+        else
          if(Greenfoot.getRandomNumber(100)<90)
          {
           turn(Greenfoot.getRandomNumber(90-45));
          }
-        }
-    
+         else
         if(getY()>=m.getHeight()-5||getY()<=5)
         {
-        turn(180);
+          turn(180);
+         }
+         else
         if(Greenfoot.getRandomNumber(100)<90)
-        {
-        turn(Greenfoot.getRandomNumber(90-45));
-        }
-        }
-    }
+          {
+          turn(Greenfoot.getRandomNumber(90-45));
+          }
          
-        if(isTouching(Barco1user.class))
+        if(isTouching(Barco3user.class))
       {
         vida-=20;
         vidaBarra.detectaPresen();
@@ -52,7 +54,7 @@ public class Meteoro extends Movimientos
        getWorld().removeObject(this);
       }
       else
-       if(isTouching(Disparo.class))
+       if(isTouching(Disparo3.class))
          {
             Fuego fuego = new Fuego();
             getWorld().addObject(fuego, getX(), getY()); 
@@ -62,6 +64,4 @@ public class Meteoro extends Movimientos
     
    }
     
-   
- }    
-   
+ }

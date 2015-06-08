@@ -28,9 +28,5 @@ public class MasVida extends Movimientos
             turn(90);
           }
        
-       
-       
-       
-       
         }
     }

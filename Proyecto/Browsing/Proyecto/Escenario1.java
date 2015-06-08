@@ -111,7 +111,24 @@ public class Escenario1 extends World
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
       Gas();
+      crearMeteoro(6);
       vScroll = 0;
+    }
+    
+     
+   /**
+     * Metodo para crear mas obstaculos para el juego
+     * que se moveran por el escenario
+     */
+    public void crearMeteoro(int numero)
+    {
+    for(int i=0;i<numero;i++)
+    {
+    Meteoro me = new Meteoro(); 
+    int x=Greenfoot.getRandomNumber(getWidth());
+    int y=Greenfoot.getRandomNumber(getWidth());
+    addObject(me,x,y);
+    }
     }
     
     /**

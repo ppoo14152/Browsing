@@ -108,6 +108,7 @@ public class Escenario2 extends World
       addObject(bar2,800,500);
         //bar2.setLocation(293,366);
          Gas();
+       crearMeteoro2(6);
       vScroll = 0;
     }
     
@@ -121,6 +122,21 @@ public class Escenario2 extends World
       MasVida mivi= new MasVida();
       addObject(mivi,180,500);
    
+    }
+    
+    /**
+     * Metodo para crear mas obstaculos para el juego
+     * que se moveran por el escenario
+     */ 
+    public void crearMeteoro2(int numero)
+    {
+    for(int i=0;i<numero;i++)
+    {
+    Meteoro2 me2 = new Meteoro2(); 
+    int x=Greenfoot.getRandomNumber(getWidth());
+    int y=Greenfoot.getRandomNumber(getWidth());
+    addObject(me2,x,y);
+    }
     }
     
     /**
