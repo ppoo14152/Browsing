@@ -52,6 +52,7 @@ public class Escenario1 extends World
        Prepare1();
         play();
         loop();
+        
     }
     
     /**
@@ -111,7 +112,6 @@ public class Escenario1 extends World
       addObject(bar,800,500);
       Gas();
       vScroll = 0;
-      
     }
     
     /**
@@ -126,7 +126,6 @@ public class Escenario1 extends World
    
     }
     
-      
     /**
      * this method is for the prepare the enemys for the user
      */public void Prepare1()

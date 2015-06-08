@@ -109,7 +109,7 @@ import greenfoot.*;
        
        if(isTouching(DisparoCri.class) || isTouching(Bala1.class))
         {   
-         vida--;
+         vida-=20;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
@@ -117,7 +117,7 @@ import greenfoot.*;
        else
        if(isTouching(EnemCriatura.class) ||isTouching(Enemigo1.class))
        {
-        vida--;
+        vida-=20;
         vidaBarra.detectaPresen();
         Fuego fuego = new Fuego();
         getWorld().addObject(fuego, getX(), getY());
@@ -127,23 +127,9 @@ import greenfoot.*;
        if(((Escenario1)getWorld()).punto.getValue()==50)
        {
          ((Escenario1)getWorld()).creaEne();  
-         //Enemigo1 ene1 = new Enemigo1();
-         //((Escenario1)getWorld()).addObject(ene1,100,440);
-         
+         ((Escenario1)getWorld()).Gas();          
         }
        
-       if(((Escenario1)getWorld()).punto.getValue()==110 )
-       {
-         //((Escenario1)getWorld()).Gas();  
-          MasVida mivi= new MasVida();
-         ((Escenario1)getWorld()).addObject(mivi,180,500);
-        }
-        
-        if(((Escenario1)getWorld()).punto.getValue()==700)
-       {
-          MasVida mivi= new MasVida();
-         ((Escenario1)getWorld()).addObject(mivi,180,500);
-       }
           
        if(getVida() == 0)
        {
@@ -158,6 +144,16 @@ import greenfoot.*;
           jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
            Greenfoot.setWorld(new Fin(0));
         ((Escenario1)getWorld()).stop();
+       }
+       
+       else
+        if(getOneIntersectingObject(MasVida.class)!=null)
+        {
+         vida+=40;
+         vidaBarra.sumavida();
+         s= new GreenfootSound("ok.mp3");
+         s.play();
+        getWorld().removeObject(getOneIntersectingObject(MasVida.class));
        }
        
      }

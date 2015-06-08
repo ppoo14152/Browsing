@@ -22,6 +22,13 @@ public class Bala1 extends Movimientos
           getWorld().removeObject(this);
         }
         else
+      if(isTouching(Barco1user.class))
+      {
+       Fuego fuego = new Fuego();
+       getWorld().addObject(fuego, getX(), getY()); 
+       getWorld().removeObject(this);
+      }
+        else
         if(getX()<getWorld().getWidth())
         {
           mueve();

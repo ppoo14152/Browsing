@@ -40,7 +40,7 @@ public class Disparo3 extends Movimientos
       else
       if(isTouching(Enemigo3.class))
       {
-       vidaE-=10;
+       vidaE-=20;
        barraEne.detectaPresencia();
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY());     

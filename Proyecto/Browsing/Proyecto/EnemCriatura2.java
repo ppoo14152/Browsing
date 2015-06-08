@@ -20,12 +20,6 @@ public class EnemCriatura2 extends Movimientos
      */
      public void act() 
       {
-        // Add your action code here.
-       //move(0.5);
-        //if(isAtEdge() || getX()>750) 
-        //{  
-         //turn(180);
-         //getImage().mirrorVertically();   
          disparar();
         if(isTouching(Barco2user.class))
        {

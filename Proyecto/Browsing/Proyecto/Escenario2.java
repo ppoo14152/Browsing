@@ -107,8 +107,20 @@ public class Escenario2 extends World
       Barco2user bar2 = new Barco2user();
       addObject(bar2,800,500);
         //bar2.setLocation(293,366);
-        
+         Gas();
       vScroll = 0;
+    }
+    
+    /**
+     *Metodo para crear la imagen que servira
+     *como referencia para recuperar la vida
+     */
+    public void Gas()
+    {
+        
+      MasVida mivi= new MasVida();
+      addObject(mivi,180,500);
+   
     }
     
     /**

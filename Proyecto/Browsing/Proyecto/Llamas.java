@@ -20,6 +20,13 @@ public class Llamas extends Movimientos
         {
           getWorld().removeObject(this);
         }
+        else
+          if(isTouching(Barco3user.class))
+      {
+       Fuego fuego = new Fuego();
+       getWorld().addObject(fuego, getX(), getY()); 
+       getWorld().removeObject(this);
+      }
         else 
         if(getX()<getWorld().getWidth())
         {

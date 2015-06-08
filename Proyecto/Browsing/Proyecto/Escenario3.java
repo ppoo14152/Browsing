@@ -97,7 +97,21 @@ public class Escenario3 extends World
       Barco3user bar3 = new Barco3user();
       addObject(bar3,800,500);
        vScroll = 0;
+        Gas();
     }
+    
+     /**
+     *Metodo para crear la imagen que servira
+     *como referencia para recuperar la vida
+     */
+    public void Gas()
+    {
+        
+      MasVida mivi= new MasVida();
+      addObject(mivi,180,500);
+   
+    }
+    
     
     /**
      * Metodo para crea a las criaturas, ademas de añadirlas a el escenario

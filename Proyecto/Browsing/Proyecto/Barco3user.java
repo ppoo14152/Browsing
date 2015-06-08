@@ -10,7 +10,6 @@ import greenfoot.*;
  */
 public class Barco3user extends Movimientos
 {
-    private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
     private Cadenas nivel;
@@ -19,6 +18,7 @@ public class Barco3user extends Movimientos
     private int vida = 300;
     private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
+    private GreenfootSound s;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -114,7 +114,7 @@ public class Barco3user extends Movimientos
      //((Escenario1)getWorld()).tambahSkor();
      if(isTouching(Llamas.class) || isTouching(Bala3.class))
      {
-         vida--;
+         vida-=20;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
@@ -122,7 +122,7 @@ public class Barco3user extends Movimientos
      else
      if(isTouching(EnemCriatura3.class)||isTouching(Enemigo3.class))
      {
-      vida--;
+      vida-=20;
       vidaBarra.detectaPresen();
       Fuego fuego = new Fuego();
       getWorld().addObject(fuego, getX(), getY());
@@ -131,8 +131,7 @@ public class Barco3user extends Movimientos
      if(((Escenario3)getWorld()).punto.getValue()==150)
        {
          ((Escenario3)getWorld()).creaEne3();  
-         //Enemigo3 ene3 = new Enemigo3();
-         //((Escenario3)getWorld()).addObject(ene1,100,440);
+         ((Escenario3)getWorld()).Gas();  
         }
         
      if(getVida() == 0)
@@ -147,6 +146,15 @@ public class Barco3user extends Movimientos
           jugador.saveHighscore(((Escenario3)getWorld()).punto.getValue());
            Greenfoot.setWorld(new Fin(0));
         ((Escenario3)getWorld()).stop();
+       }
+       else
+        if(getOneIntersectingObject(MasVida.class)!=null)
+        {
+         vida+=40;
+         vidaBarra.sumavida();
+         s= new GreenfootSound("ok.mp3");
+         s.play();
+        getWorld().removeObject(getOneIntersectingObject(MasVida.class));
        }
     }
     

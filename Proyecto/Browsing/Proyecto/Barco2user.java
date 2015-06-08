@@ -19,6 +19,7 @@ public class Barco2user extends Movimientos
     private int vida = 300;
     private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
+    private GreenfootSound s;
     /**
      * Act - do whatever the Barco2user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -133,7 +134,7 @@ public class Barco2user extends Movimientos
      Vida vidaBarra = escenario2.getvidaBarra();
      if(isTouching(Rocas.class)|| isTouching(Bala2.class))
        {
-         vida--;
+         vida-=20;
          vidaBarra.detectaPresen();
          Fuego fuego = new Fuego();
          getWorld().addObject(fuego, getX(), getY());
@@ -141,7 +142,7 @@ public class Barco2user extends Movimientos
      else
      if(isTouching(EnemCriatura2.class) ||isTouching(Enemigo2.class))
       {
-       vida--;
+       vida-=20;
        vidaBarra.detectaPresen();
        Fuego fuego = new Fuego();
        getWorld().addObject(fuego, getX(), getY());
@@ -149,7 +150,8 @@ public class Barco2user extends Movimientos
        
      if(((Escenario2)getWorld()).punto.getValue()==100)
        {
-         ((Escenario2)getWorld()).creaEne2();  
+         ((Escenario2)getWorld()).creaEne2();
+         ((Escenario2)getWorld()).Gas();  
 
         }
         
@@ -165,6 +167,15 @@ public class Barco2user extends Movimientos
           jugador.saveHighscore(((Escenario2)getWorld()).punto.getValue());
            Greenfoot.setWorld(new Fin(0));
         ((Escenario2)getWorld()).stop();
+       }
+       else
+        if(getOneIntersectingObject(MasVida.class)!=null)
+        {
+         vida+=40;
+         vidaBarra.sumavida();
+         s= new GreenfootSound("ok.mp3");
+         s.play();
+        getWorld().removeObject(getOneIntersectingObject(MasVida.class));
        }
     }
     

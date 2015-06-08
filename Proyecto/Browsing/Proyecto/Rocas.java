@@ -22,6 +22,13 @@ public class Rocas extends Movimientos
           getWorld().removeObject(this);
         }
         else 
+        if(isTouching(Barco2user.class))
+      {
+       Fuego fuego = new Fuego();
+       getWorld().addObject(fuego, getX(), getY()); 
+       getWorld().removeObject(this);
+      }
+      else
         if(getX()<getWorld().getWidth())
         {
           mueve();

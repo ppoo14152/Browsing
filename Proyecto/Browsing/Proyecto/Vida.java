@@ -52,11 +52,11 @@ public class Vida extends Actor
      */
     public void detectaPresen()
     {
-        vida--;
+        vida-=20;
     }
     
     public void sumavida()
     {
-        vida+=15;
+        vida+=40;
     }
 }
