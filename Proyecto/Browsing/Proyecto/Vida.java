@@ -54,4 +54,9 @@ public class Vida extends Actor
     {
         vida--;
     }
+    
+    public void sumavida()
+    {
+        vida+=15;
+    }
 }

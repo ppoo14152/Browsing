@@ -31,11 +31,10 @@ public class MasVida extends Movimientos
           
           }
           else
-          
        if(isTouching(Barco1user.class))
         {
-         vida+=10;
-         vidaBarra.detectaPresen();
+         vida+=15;
+         vidaBarra.sumavida();
          s= new GreenfootSound("ok.mp3");
          s.play();
          getWorld().removeObject(this);

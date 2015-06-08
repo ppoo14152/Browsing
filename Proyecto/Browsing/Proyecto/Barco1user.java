@@ -11,6 +11,7 @@ import greenfoot.*;
  public class Barco1user extends Movimientos
  {
   private Cadenas vid;
+  private Cadenas nivel;
   private Save jugador=new Save();
   private Vida vidaBarra = new Vida();
   private int vida = 300;
@@ -26,6 +27,7 @@ import greenfoot.*;
     {
         Movimientos();
         MuestraVida();
+        MuestraNivel();
         danio(); 
     }
    
@@ -36,7 +38,7 @@ import greenfoot.*;
   public Barco1user()
     {
      vid = new Cadenas("Vida ");
-     //vidEne = new Cadenas("Enemigo ");
+     nivel= new Cadenas("Nivel Facil");
       
     }
     
@@ -121,17 +123,7 @@ import greenfoot.*;
         getWorld().addObject(fuego, getX(), getY());
       
        }
-      
-       /*if(getOneIntersectingObject(MasVida.class)!=null)
-        {
-         vida+=10;
-         vidaBarra.detectaPresen();
-         s= new GreenfootSound("ok.mp3");
-         s.play();
-         getWorld().removeObject(getOneIntersectingObject(MasVida.class));
-       }*/
-        
-      
+          
        if(((Escenario1)getWorld()).punto.getValue()==50)
        {
          ((Escenario1)getWorld()).creaEne();  
@@ -139,13 +131,19 @@ import greenfoot.*;
          //((Escenario1)getWorld()).addObject(ene1,100,440);
          
         }
-        
-       if(((Escenario1)getWorld()).punto.getValue()==110 || ((Escenario1)getWorld()).punto.getValue()==700)
+       
+       if(((Escenario1)getWorld()).punto.getValue()==110 )
        {
          //((Escenario1)getWorld()).Gas();  
           MasVida mivi= new MasVida();
          ((Escenario1)getWorld()).addObject(mivi,180,500);
         }
+        
+        if(((Escenario1)getWorld()).punto.getValue()==700)
+       {
+          MasVida mivi= new MasVida();
+         ((Escenario1)getWorld()).addObject(mivi,180,500);
+       }
           
        if(getVida() == 0)
        {
@@ -189,5 +187,13 @@ import greenfoot.*;
         vid.despliegaTex("",30);
         getWorld().addObject(vid,645,25);
     }
-
+   
+   /**Metodo que despilega la informacion de en 
+   * que nivel se esta jugando 
+   */
+    public void MuestraNivel()
+    {
+         nivel.despliegaTex("",30);
+        getWorld().addObject(nivel,510,67);
+    }
   }

@@ -11,4 +11,6 @@ comment2.text=\r\nmetodo\ para\ actualizar\ la\ vida\ del\ jugador\ conforme\ lo
 comment3.params=
 comment3.target=void\ detectaPresen()
 comment3.text=\r\nmetodo\ para\ \ restarle\ la\ vida\ a\ el\ jugador\r\n
-numComments=4
+comment4.params=
+comment4.target=void\ sumavida()
+numComments=5

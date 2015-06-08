@@ -12,6 +12,7 @@ public class Barco2user extends Movimientos
 {
     private Cadenas vid;
     private Cadenas vidEne;
+    private Cadenas nivel;
     private Cadenas pun;
     private Save jugador=new Save();
     private Counter score;
@@ -29,6 +30,7 @@ public class Barco2user extends Movimientos
        Movimientos(); 
        MuestraVida();
        MuestraVidaEne();
+       MuestraNivel();
        danio();
         
     }    
@@ -81,6 +83,7 @@ public class Barco2user extends Movimientos
     {
      vid = new Cadenas("Vida ");
      vidEne = new Cadenas("Enemigo ");
+     nivel= new Cadenas("Nivel Medio");
     }
     
     /**
@@ -107,6 +110,16 @@ public class Barco2user extends Movimientos
     {
         vidEne.despliegaTex("",30);
         getWorld().addObject(vidEne,75,25);
+    }
+    
+    
+     /**Metodo que despilega la informacion de en 
+     * que nivel se esta jugando 
+     */
+    public void MuestraNivel()
+    {
+         nivel.despliegaTex("",30);
+        getWorld().addObject(nivel,510,67);
     }
          
     /**

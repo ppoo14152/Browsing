@@ -114,6 +114,10 @@ public class Escenario1 extends World
       
     }
     
+    /**
+     *Metodo para crear la imagen que servira
+     *como referencia para recuperar la vida
+     */
     public void Gas()
     {
         
@@ -122,18 +126,7 @@ public class Escenario1 extends World
    
     }
     
- 
-    /*public void caidas()
-    {
-        con++;
-        if(con> 100 && punto.getValue()==100 && punto.getValue()<800)
-        {
-         Meteoro me = new Meteoro(); 
-         addObject(me,Greenfoot.getRandomNumber(600) , 10);
-         con=0;
-        }
-    }*/
-    
+      
     /**
      * this method is for the prepare the enemys for the user
      */public void Prepare1()
@@ -179,6 +172,10 @@ public class Escenario1 extends World
         return vScroll;
     }
     
+   /**
+    *Metodo para regresar la informacion del barco de 
+    *usuario asi de como su estado
+    */
    public Barco1user getBarco1user()
    {
        return bar1;

@@ -13,6 +13,7 @@ public class Barco3user extends Movimientos
     private int q=0;
     private Cadenas vid;
     private Cadenas vidEne;
+    private Cadenas nivel;
     private Save jugador=new Save();
     private Vida vidaBarra = new Vida();
     private int vida = 300;
@@ -28,6 +29,7 @@ public class Barco3user extends Movimientos
         movimientos();
         MuestraVida();
         MuestraVidaEne();
+        MuestraNivel();
         disparar();
         danio();
     }
@@ -39,7 +41,7 @@ public class Barco3user extends Movimientos
     {
      vid = new Cadenas("Vida ");
      vidEne = new Cadenas("Enemigo ");
-       
+     nivel= new Cadenas("Nivel Dificil");  
     }
     
     /**
@@ -164,5 +166,15 @@ public class Barco3user extends Movimientos
     {
         vidEne.despliegaTex("",30);
         getWorld().addObject(vidEne,75,25);
+    }
+    
+    /**Metodo que despilega la informacion de en 
+     * que nivel se esta jugando
+     * 
+     */
+    public void MuestraNivel()
+    {
+         nivel.despliegaTex("",30);
+        getWorld().addObject(nivel,510,67);
     }
 }
