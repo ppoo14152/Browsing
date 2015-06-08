@@ -34,6 +34,7 @@ public class Escenario1 extends World
         }
         scrollWorld();
         Counter punto = new Counter("Puntos : ");
+       
     }
     
    /**
@@ -105,13 +106,33 @@ public class Escenario1 extends World
       addObject(barraEne,280,25);
       
       addObject(punto, 500, 27);
-      Meteoro me = new Meteoro(); 
-      addObject(me,300,0);
+         
       Barco1user bar = new Barco1user();
       addObject(bar,800,500);
-    
+      Gas();
       vScroll = 0;
+      
     }
+    
+    public void Gas()
+    {
+        
+      MasVida mivi= new MasVida();
+      addObject(mivi,180,500);
+   
+    }
+    
+ 
+    /*public void caidas()
+    {
+        con++;
+        if(con> 100 && punto.getValue()==100 && punto.getValue()<800)
+        {
+         Meteoro me = new Meteoro(); 
+         addObject(me,Greenfoot.getRandomNumber(600) , 10);
+         con=0;
+        }
+    }*/
     
     /**
      * this method is for the prepare the enemys for the user

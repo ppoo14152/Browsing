@@ -17,25 +17,5 @@ public class Meteoro extends Movimientos
     public void act() 
     {
         // Add your action code here.
-        if(getY()<getWorld().getHeight()-1)
-         mueve();
-         else
-          getWorld().removeObject(this);
-           
-        
     }    
-    
-    /**public void mueve()
-    {
-        int x=getX(), y= getY();
-        setLocation(x,y+2);
-    }*/
-    
-        public void mueve()
-    {
-        if(getY()<getWorld().getHeight()&&getX()>0&&getX()<getWorld().getWidth())
-            move(1);
-        else
-            getWorld().removeObject(this);
-    }
-}
+  }

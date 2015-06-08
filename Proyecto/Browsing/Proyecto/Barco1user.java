@@ -16,6 +16,8 @@ import greenfoot.*;
   private int vida = 300;
   private VidaEnemigoF barraEne = new VidaEnemigoF();
   private int vidaE = 100;
+  private GreenfootSound s;
+  
   /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -120,13 +122,31 @@ import greenfoot.*;
       
        }
       
+       /*if(getOneIntersectingObject(MasVida.class)!=null)
+        {
+         vida+=10;
+         vidaBarra.detectaPresen();
+         s= new GreenfootSound("ok.mp3");
+         s.play();
+         getWorld().removeObject(getOneIntersectingObject(MasVida.class));
+       }*/
+        
+      
        if(((Escenario1)getWorld()).punto.getValue()==50)
        {
          ((Escenario1)getWorld()).creaEne();  
          //Enemigo1 ene1 = new Enemigo1();
          //((Escenario1)getWorld()).addObject(ene1,100,440);
+         
         }
         
+       if(((Escenario1)getWorld()).punto.getValue()==110 || ((Escenario1)getWorld()).punto.getValue()==700)
+       {
+         //((Escenario1)getWorld()).Gas();  
+          MasVida mivi= new MasVida();
+         ((Escenario1)getWorld()).addObject(mivi,180,500);
+        }
+          
        if(getVida() == 0)
        {
         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
