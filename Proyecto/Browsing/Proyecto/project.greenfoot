@@ -733,10 +733,15 @@ dependency99.to=Llamas
 dependency99.type=UsesDependency
 mainWindow.height=744
 mainWindow.width=1382
-mainWindow.x=-8
-mainWindow.y=-8
+mainWindow.x=-15
+mainWindow.y=69
+<<<<<<< .mine
+package.numDependencies=204
+package.numTargets=52
+=======
 package.numDependencies=210
 package.numTargets=52
+>>>>>>> .r61
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -750,7 +755,7 @@ readme.editor.height=700
 readme.editor.width=900
 readme.editor.x=0
 readme.editor.y=0
-simulation.speed=64
+simulation.speed=56
 target1.editor.height=700
 target1.editor.width=900
 target1.editor.x=40
@@ -826,6 +831,15 @@ target14.naviview.expanded=true
 target14.showInterface=false
 target14.type=ClassTarget
 target14.typeParameters=
+<<<<<<< .mine
+target14.width=100
+target14.x=180
+target14.y=70
+target15.editor.height=700
+target15.editor.width=640
+target15.editor.x=756
+target15.editor.y=47
+=======
 target14.width=100
 target14.x=180
 target14.y=70
@@ -833,6 +847,7 @@ target15.editor.height=700
 target15.editor.width=900
 target15.editor.x=475
 target15.editor.y=18
+>>>>>>> .r61
 target15.height=50
 target15.name=Barco3user
 target15.naviview.expanded=false
@@ -870,8 +885,8 @@ target17.x=130
 target17.y=670
 target18.editor.height=700
 target18.editor.width=900
-target18.editor.x=40
-target18.editor.y=20
+target18.editor.x=-17
+target18.editor.y=14
 target18.height=50
 target18.name=Meteoro2
 target18.naviview.expanded=true
@@ -896,8 +911,8 @@ target19.x=200
 target19.y=190
 target2.editor.height=700
 target2.editor.width=764
-target2.editor.x=-27
-target2.editor.y=16
+target2.editor.x=570
+target2.editor.y=88
 target2.height=50
 target2.name=Disparo
 target2.naviview.expanded=false
@@ -931,12 +946,21 @@ target21.showInterface=false
 target21.type=ClassTarget
 target21.typeParameters=
 target21.width=80
+<<<<<<< .mine
+target21.x=10
+target21.y=970
+target22.editor.height=684
+target22.editor.width=733
+target22.editor.x=-31
+target22.editor.y=9
+=======
 target21.x=10
 target21.y=970
 target22.editor.height=636
 target22.editor.width=899
 target22.editor.x=375
 target22.editor.y=31
+>>>>>>> .r61
 target22.height=50
 target22.name=Barco2user
 target22.naviview.expanded=true
@@ -948,8 +972,8 @@ target22.x=10
 target22.y=490
 target23.editor.height=700
 target23.editor.width=900
-target23.editor.x=40
-target23.editor.y=20
+target23.editor.x=300
+target23.editor.y=75
 target23.height=50
 target23.name=Meteoro3
 target23.naviview.expanded=false
@@ -1050,10 +1074,17 @@ target3.typeParameters=
 target3.width=80
 target3.x=200
 target3.y=370
+<<<<<<< .mine
+target30.editor.height=768
+target30.editor.width=740
+target30.editor.x=97
+target30.editor.y=14
+=======
 target30.editor.height=710
 target30.editor.width=740
 target30.editor.x=20
 target30.editor.y=11
+>>>>>>> .r61
 target30.height=50
 target30.name=Barco1user
 target30.naviview.expanded=true
@@ -1088,11 +1119,19 @@ target32.type=ClassTarget
 target32.typeParameters=
 target32.width=110
 target32.x=10
+<<<<<<< .mine
+target32.y=670
+target33.editor.height=700
+target33.editor.width=708
+target33.editor.x=131
+target33.editor.y=43
+=======
 target32.y=670
 target33.editor.height=700
 target33.editor.width=708
 target33.editor.x=3
 target33.editor.y=18
+>>>>>>> .r61
 target33.height=50
 target33.name=Escenario1
 target33.naviview.expanded=true
@@ -1182,8 +1221,8 @@ target39.x=190
 target39.y=1030
 target4.editor.height=700
 target4.editor.width=900
-target4.editor.x=368
-target4.editor.y=13
+target4.editor.x=-2
+target4.editor.y=65
 target4.height=50
 target4.name=Disparo3
 target4.naviview.expanded=false
@@ -1247,8 +1286,13 @@ target43.x=100
 target43.y=790
 target44.editor.height=700
 target44.editor.width=900
+<<<<<<< .mine
+target44.editor.x=440
+target44.editor.y=6
+=======
 target44.editor.x=485
 target44.editor.y=11
+>>>>>>> .r61
 target44.height=50
 target44.name=Enemigo1
 target44.naviview.expanded=true
@@ -1351,8 +1395,13 @@ target50.x=100
 target50.y=970
 target51.editor.height=715
 target51.editor.width=900
+<<<<<<< .mine
+target51.editor.x=89
+target51.editor.y=41
+=======
 target51.editor.x=-41
 target51.editor.y=0
+>>>>>>> .r61
 target51.height=50
 target51.name=EnemCriatura
 target51.naviview.expanded=true
