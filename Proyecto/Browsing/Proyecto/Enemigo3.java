@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class Enemigo3 extends Movimientos
 {
-    private int bala=0;
+   private SimpleTimer timer;
     /**
      * Act - do whatever the Enemigo3 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,22 +26,26 @@ public class Enemigo3 extends Movimientos
         }
     }    
     
+    /**
+     * Constructor de el enemigo 3 que aparece en 
+     * el nivel dificil
+     */
+    public Enemigo3()
+    {
+      timer = new SimpleTimer();    
+    }
+    
      /**
       *Metodo para el disparo del enemigo3 
       */
      public void disparo()
-    {
-        bala++;
-         if(bala==1)
-        {
-         
-         Bala3 b3 = new Bala3();
-         getWorld().addObject(b3,getX(),getY());
-         b3.setRotation(getRotation());
-        }
-        if(bala==50)
-        {
-         bala=0;
-        }   
+    {  
+        if(timer.millisElapsed()/250>6)
+          {      
+             Bala3 b3 = new Bala3();
+            getWorld().addObject(b3,getX(),getY());
+            b3.setRotation(getRotation());
+            timer.mark();
+         }
     }
 }

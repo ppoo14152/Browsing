@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class Enemigo2 extends Movimientos
 {
-     private int bala=0;
+    private SimpleTimer timer;
     /**
      * Act - do whatever the Enemigo2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,21 +27,26 @@ public class Enemigo2 extends Movimientos
     }    
     
     /**
+     *Constructor de el enemigo 2 que hace su aparicion 
+     *en el nivel medio
+     */
+    public Enemigo2()
+    {
+        timer = new SimpleTimer();
+    }
+    
+    /**
      *Metodo para disparar de el enemigo 2 que esta en el nivel 2  
      */
     public void disparo()
     {
-        bala++;
-         if(bala==1)
-        {
-         
-         Bala2 b2 = new Bala2();
-         getWorld().addObject(b2,getX(),getY());
-         b2.setRotation(getRotation());
-        }
-        if(bala==50)
-        {
-         bala=0;
-        }   
+           
+        if(timer.millisElapsed()/300>6)
+           {        
+             Bala2 b2 = new Bala2();
+            getWorld().addObject(b2,getX(),getY());
+           b2.setRotation(getRotation());
+             timer.mark();
+           }
     }
 }

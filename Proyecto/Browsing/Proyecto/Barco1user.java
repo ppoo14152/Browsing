@@ -136,14 +136,14 @@ import greenfoot.*;
         jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
         //capturaPuntaje();
         Greenfoot.setWorld(new Fin(1));
-        ((Escenario1)getWorld()).stop();
+        ((Escenario1)getWorld()).stopped();
        }
        else
        if(((Escenario1)getWorld()).punto.getValue()==1060)
        {
           jugador.saveHighscore(((Escenario1)getWorld()).punto.getValue());
            Greenfoot.setWorld(new Fin(0));
-        ((Escenario1)getWorld()).stop();
+        ((Escenario1)getWorld()).stopped();
        }
        
        else

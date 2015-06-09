@@ -10,7 +10,7 @@ import greenfoot.*;
  */
 public class EnemCriatura3 extends Movimientos
 {
-    private int disparo=0;
+    private SimpleTimer timer;
         /**
      * Act - do whatever the EnemCriatura3 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,23 +35,26 @@ public class EnemCriatura3 extends Movimientos
         }
     }
     
+     /**
+     * constructor de la clase criatura 3 que aparece en el 
+     * nivel dificil 
+     */
+    public EnemCriatura3()
+    {
+        timer = new SimpleTimer();
+    }
+    
     /**
      *Metodo para el disparo de la cratura 3 
      */
     public void disparar()
     {
-         disparo++;
-         if(disparo==1)
-        {
-         
-         Llamas lla = new Llamas ();
-         getWorld().addObject(lla,getX(),getY());
-         lla.setRotation(getRotation());
+        if(timer.millisElapsed()/375>6)
+           {   
+            Llamas lla = new Llamas ();
+            getWorld().addObject(lla,getX(),getY());
+            lla.setRotation(getRotation());
+            timer.mark();
         }
-        if(disparo==50)
-        {
-         disparo=0;
-        }
-        
     }
 }

@@ -9,7 +9,8 @@ import greenfoot.*;
  */
 public class EnemCriatura extends Movimientos
 {
-    private int bala=0;
+   
+    private SimpleTimer timer;
     /**
      * Act - do whatever the EnemCriatura wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -31,22 +32,23 @@ public class EnemCriatura extends Movimientos
          }
     }
      
-    public void disparar()
+    /**
+     * constructor de la clase criatura 1 que aparece en el primer nivel 
+     */
+    public EnemCriatura()
     {
-           
-       bala++;
-         if(bala==1)
-        {
-         
-         DisparoCri dc1 = new DisparoCri ();
-         getWorld().addObject(dc1,getX(),getY());
-         dc1.setRotation(getRotation());
-        }
-        if(bala==50)
-        {
-         bala=0;
-        }
-        
+        timer = new SimpleTimer();
+    }
+    
+    public void disparar()
+    {      
+          if(timer.millisElapsed()/400>6)
+                {
+                   
+                  DisparoCri dc1 = new DisparoCri ();
+                  getWorld().addObject(dc1,getX(),getY());
+                  timer.mark();
+                }
         }
     }
         

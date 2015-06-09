@@ -15,6 +15,7 @@ public class Enemigo1 extends Movimientos
     private Save jugador=new Save();
     private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
+    private SimpleTimer timer;
     /**
      * Act - do whatever the Enemigo1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -38,25 +39,22 @@ public class Enemigo1 extends Movimientos
     public Enemigo1()
     {
         vidEne = new Cadenas("Enemigo ");
+        timer = new SimpleTimer();
      }
     
     /**
      *Metodo para el disparo para el enemigo final 1 
      */
     public void disparo()
-    {
-        disparo++;
-         if(disparo==1)
-        {
-         
-         Bala1 b1 = new Bala1();
-         getWorld().addObject(b1,getX(),getY());
-         b1.setRotation(getRotation());
-        }
-        if(disparo==50)
-        {
-         disparo=0;
-        }   
+    {     
+        if(timer.millisElapsed()/350>6)
+                {
+                   
+               Bala1 b1 = new Bala1();
+               getWorld().addObject(b1,getX(),getY());
+               b1.setRotation(getRotation());
+               timer.mark();
+                }
     } 
        
      /**

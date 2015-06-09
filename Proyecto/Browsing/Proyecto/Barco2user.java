@@ -159,14 +159,14 @@ public class Barco2user extends Movimientos
      {
        jugador.saveHighscore(((Escenario2)getWorld()).punto.getValue());
        Greenfoot.setWorld(new Fin(1));
-       ((Escenario2)getWorld()).stop();
+       ((Escenario2)getWorld()).stopped();
      }
      else
        if(((Escenario2)getWorld()).punto.getValue()==1630)
        {
           jugador.saveHighscore(((Escenario2)getWorld()).punto.getValue());
            Greenfoot.setWorld(new Fin(0));
-        ((Escenario2)getWorld()).stop();
+        ((Escenario2)getWorld()).stopped();
        }
        else
         if(getOneIntersectingObject(MasVida.class)!=null)

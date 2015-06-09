@@ -17,7 +17,7 @@ public class Escenario3 extends World
 {
     private int timeSpawn = 0;
     Counter punto = new Counter("Puntos : ");
-    private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+    private GreenfootSound s;
     private int vScroll;
     private ImgScroll scroll;
     private Vida vidaBarra = new Vida();
@@ -33,11 +33,10 @@ public class Escenario3 extends World
        setBackground ("escenario.png");
        getBackground().setColor(Color.BLACK);
        getBackground().fill();
-        prepare();
-        prepare1();
-        play();
-        loop();
-        
+       s= new GreenfootSound("bg.wav"); 
+       prepare();
+       prepare1();
+              
     }
     
     /**
@@ -45,6 +44,9 @@ public class Escenario3 extends World
      */
     public void act()
     {
+        if(!s.isPlaying())
+            started();
+        
         timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
@@ -53,28 +55,21 @@ public class Escenario3 extends World
    
     }
     
-    /**
-     *Metodo para iniciar la musica 
+      /**
+     * metodo para reproducir la musica ciclicamente.
      */
-    public void play()
+    public void started()
     {
-        bgMusic.play();
+        s.playLoop();
     }
     
-    /**
-     *Metodo para detener la musica 
-     */
-    public void stop()
+     /**
+    * metodo para detener el sonido si se sale del
+    * escenario.
+    */
+    public void stopped()
     {
-        bgMusic.stop();
-    }
-    
-    /**
-     *Metodo para repetir la musica varias veces(ciclo) 
-     */
-    public void loop()
-    {
-        bgMusic.playLoop();
+        s.stop();
     }
     
     /**

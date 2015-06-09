@@ -13,7 +13,7 @@ import greenfoot.*;
  */
 public class EnemCriatura2 extends Movimientos
 {
-    private int disparo=0;
+     private SimpleTimer timer;
     /**
      * Act - do whatever the EnemCriatura2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,24 +35,25 @@ public class EnemCriatura2 extends Movimientos
       }
     }
     
+     /**
+     * constructor de la clase criatura 2 que aparece en el segundo nivel 
+     */
+    public EnemCriatura2()
+    {
+        timer = new SimpleTimer();
+    }
    
     /**
      *Metodo para el disparo de la criatura 2 
      */
     public void disparar()
     {
-         disparo++;
-         if(disparo==1)
-        {
-         
-         Rocas rc = new Rocas();
-         getWorld().addObject(rc,getX(),getY());
-         rc.setRotation(getRotation());
-        }
-        if(disparo==50)
-        {
-         disparo=0;
-        }
-        
+        if(timer.millisElapsed()/325>6)
+           {     
+              Rocas rc = new Rocas();
+              getWorld().addObject(rc,getX(),getY());
+              rc.setRotation(getRotation());
+              timer.mark();
+           }
     }
 }

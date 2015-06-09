@@ -19,7 +19,7 @@ public class Escenario1 extends World
    private int timeSpawn = 0;
    private Barco1user bar1;
    Counter punto = new Counter("Puntos : ");
-   private GreenfootSound bgMusic = new GreenfootSound("bg.wav");
+   private GreenfootSound s;
    private ImgScroll scroll;
    private int vScroll;
    private Vida vidaBarra = new Vida();
@@ -28,13 +28,16 @@ public class Escenario1 extends World
     * Metodo para actuar de el escenario 1
     */public void act()
     {
+        if(!s.isPlaying())
+            started();
+            
         timeSpawn++;
         if(timeSpawn>700){
             timeSpawn = 0;
-        }
+           }
         scrollWorld();
         Counter punto = new Counter("Puntos : ");
-       
+      
     }
     
    /**
@@ -48,11 +51,10 @@ public class Escenario1 extends World
         setBackground ("ecenario1.png");
        getBackground().setColor(Color.BLACK);
        getBackground().fill();
+       s = new GreenfootSound("bg.wav");
        prepare();
        Prepare1();
-        play();
-        loop();
-        
+               
     }
     
     /**
@@ -69,25 +71,21 @@ public class Escenario1 extends World
         return barraEne;
     }
     
-    /**
-     * Metodo para poder activar la musica del juego
+     /**
+     * metodo para reproducir la musica ciclicamente.
      */
-    public void play()
+    public void started()
     {
-        bgMusic.play();
+        s.playLoop();
     }
     
-    /**
-     * Metodo para deterner el sonido que actua en el juego
-     */
-    public void stop()
+     /**
+    * metodo para detener el sonido si se sale del
+    * escenario.
+    */
+    public void stopped()
     {
-        bgMusic.stop();
-    }
-    
-    public void loop()
-    {
-        bgMusic.playLoop();
+        s.stop();
     }
     
        /**
