@@ -21,7 +21,7 @@ public class Meteoro2 extends Movimientos
        if(getX()<getWorld().getWidth())
         {
          move(2);
-         
+        
         if(getX()>=m.getWidth()-5||getX()<=5)
         {
          turn(180);
@@ -46,6 +46,7 @@ public class Meteoro2 extends Movimientos
         vida-=20;
         vidaBarra.detectaPresen();
        Fuego fuego = new Fuego();
+        Greenfoot.playSound("meteoro.mp3");
        getWorld().addObject(fuego, getX(), getY()); 
        getWorld().removeObject(this);
       }
@@ -53,6 +54,7 @@ public class Meteoro2 extends Movimientos
        if(isTouching(Disparo2.class))
          {
             Fuego fuego = new Fuego();
+             Greenfoot.playSound("meteoro.mp3");
             getWorld().addObject(fuego, getX(), getY()); 
             getWorld().removeObject(this);
           }

@@ -20,6 +20,7 @@ public class Barco2user extends Movimientos
     private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     private GreenfootSound s;
+    private boolean band =true;
     /**
      * Act - do whatever the Barco2user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -149,10 +150,11 @@ public class Barco2user extends Movimientos
        }
        
      if(((Escenario2)getWorld()).punto.getValue()==100)
-       {
+       if(band==true)
+        {
          ((Escenario2)getWorld()).creaEne2();
          ((Escenario2)getWorld()).Gas();  
-
+         band=false;
         }
         
      if(getVida() == 0)

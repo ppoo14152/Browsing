@@ -19,6 +19,7 @@ public class Barco3user extends Movimientos
     private VidaEnemigoF barraEne = new VidaEnemigoF();
     private int vidaE = 100;
     private GreenfootSound s;
+    private boolean band=true;
     /**
      * Act - do whatever the Barco3user wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -73,8 +74,8 @@ public class Barco3user extends Movimientos
      */
     private void disparar()
     {
-        //if(("space").equals(Greenfoot.getKey()))
-        if (Greenfoot.isKeyDown("space"))//&& System.currentTimeMillis()>lastShot+300)
+        
+        if(("space").equals(Greenfoot.getKey())) 
         {
            Disparo3 di = new Disparo3();
           
@@ -129,9 +130,11 @@ public class Barco3user extends Movimientos
      }
      
      if(((Escenario3)getWorld()).punto.getValue()==150)
-       {
+       if(band==true)
+        {
          ((Escenario3)getWorld()).creaEne3();  
          ((Escenario3)getWorld()).Gas();  
+        band=false;
         }
         
      if(getVida() == 0)

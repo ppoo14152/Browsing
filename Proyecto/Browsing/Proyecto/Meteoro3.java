@@ -22,34 +22,34 @@ public class Meteoro3 extends Movimientos
          if(getX()<getWorld().getWidth())
         {
          move(2);
-         
-        }
-         else
+    
          if(getX()>=m.getWidth()-5||getX()<=5)
          {
          turn(180);
-        }
-        else
+        
          if(Greenfoot.getRandomNumber(100)<90)
          {
           turn(Greenfoot.getRandomNumber(90-45));
          }
-         else
+        }
+        
         if(getY()>=m.getHeight()-5||getY()<=5)
         {
           turn(180);
-         }
-         else
+         
         if(Greenfoot.getRandomNumber(100)<90)
           {
           turn(Greenfoot.getRandomNumber(90-45));
           }
-         
-        if(isTouching(Barco3user.class))
+        }
+    }
+       
+    if(isTouching(Barco3user.class))
       {
         vida-=20;
         vidaBarra.detectaPresen();
        Fuego fuego = new Fuego();
+        Greenfoot.playSound("meteoro.mp3");
        getWorld().addObject(fuego, getX(), getY()); 
        getWorld().removeObject(this);
       }
@@ -57,6 +57,7 @@ public class Meteoro3 extends Movimientos
        if(isTouching(Disparo3.class))
          {
             Fuego fuego = new Fuego();
+             Greenfoot.playSound("meteoro.mp3");
             getWorld().addObject(fuego, getX(), getY()); 
             getWorld().removeObject(this);
           }

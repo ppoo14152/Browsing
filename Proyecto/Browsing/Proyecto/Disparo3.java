@@ -49,4 +49,12 @@ public class Disparo3 extends Movimientos
        getWorld().removeObject(this);
       }
     }    
+    
+    /**
+   * Metodo para regresar la vida del enemigo
+   */
+  public int getVidaE()
+  {
+    return vidaE;
+  }
 }

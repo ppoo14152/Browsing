@@ -18,6 +18,7 @@ import greenfoot.*;
   private VidaEnemigoF barraEne = new VidaEnemigoF();
   private int vidaE = 100;
   private GreenfootSound s;
+  private boolean band = true;
   
   /**
      * Act - do whatever the barco1 wants to do. This method is called whenever
@@ -125,9 +126,12 @@ import greenfoot.*;
        }
           
        if(((Escenario1)getWorld()).punto.getValue()==50)
-       {
+        
+        if(band==true)
+        {
          ((Escenario1)getWorld()).creaEne();  
          ((Escenario1)getWorld()).Gas();          
+         band=false;
         }
        
           
